@@ -52,17 +52,7 @@ public class HomepageTabFragment extends Fragment{
      *初始化数据
      */
     private void initView(View view) {
-        imageView_item1= (ImageView) view.findViewById(R.id.image_item1);
-        imageView_doctor= (ImageView) view.findViewById(R.id.image_item_doctor);
-        imageView_appointment= (ImageView) view.findViewById(R.id.image_item_appointment);
-        imageView_myappointment= (ImageView) view.findViewById(R.id.image_item_myappointment);
-        imageView_login= (ImageView) view.findViewById(R.id.image_item_login);
 
-        imageView_item1.setImageResource(R.drawable.homeitem01);
-        imageView_doctor.setImageResource(R.drawable.rdoctor);
-        imageView_appointment.setImageResource(R.drawable.rappointment);
-        imageView_myappointment.setImageResource(R.drawable.rmyappointment);
-        imageView_login.setImageResource(R.drawable.rlogin);
     }
 
 }
