@@ -13,12 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#fafbfc" />
-    <ImageView
-        android:id="@+id/image_item1"
-        android:layout_below="@+id/text_weiyi"
-        android:layout_width="match_parent"
-        android:src="@drawable/homeitem01"
-        android:layout_height="200dp" />
 
     <LinearLayout
         android:background="#e7ebef"
@@ -120,5 +114,15 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_item1"
+        android:layout_width="match_parent"
+        android:src="@drawable/homeitem01"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/text_weiyi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

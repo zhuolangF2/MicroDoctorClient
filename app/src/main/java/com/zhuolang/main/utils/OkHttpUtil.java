@@ -1,4 +1,4 @@
-package com.zhuolang.main.util;
+package com.zhuolang.main.utils;
 
 /**
  * Created by jat on 2016/10/31.

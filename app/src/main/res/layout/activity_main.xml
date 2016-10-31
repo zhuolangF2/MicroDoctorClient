@@ -20,7 +20,7 @@
         android:background="@drawable/tab_bg"
         android:orientation="horizontal" >
 <!--运用自定义的控件和属性-->
-        <com.zhuolang.main.ChangeColorIconWithText
+        <com.zhuolang.main.view.ChangeColorIconWithText
             android:id="@+id/id_indicator_one"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -31,7 +31,7 @@
             hyman:text_size="15sp"
             android:layout_weight="1"/>
 
-        <com.zhuolang.main.ChangeColorIconWithText
+        <com.zhuolang.main.view.ChangeColorIconWithText
             android:id="@+id/id_indicator_two"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -42,7 +42,7 @@
             hyman:text_size="15sp"
             android:layout_weight="1"/>
 
-        <com.zhuolang.main.ChangeColorIconWithText
+        <com.zhuolang.main.view.ChangeColorIconWithText
             android:id="@+id/id_indicator_three"
             android:layout_width="0dp"
             android:layout_height="fill_parent"

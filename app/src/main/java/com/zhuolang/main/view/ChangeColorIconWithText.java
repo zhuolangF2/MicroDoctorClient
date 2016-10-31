@@ -1,4 +1,4 @@
-package com.zhuolang.main;
+package com.zhuolang.main.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,6 +17,8 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import com.zhuolang.main.R;
 
 /**
  * Created by wnf on 2016/10/30.
@@ -67,7 +69,7 @@ public class ChangeColorIconWithText extends View {
     {
         super(context, attrs, defStyleAttr);
         //通过TypedArray遍历里面自定义的所有属性，拿到属性的值然后赋给成员变量
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.ChangeColorIconWithText);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ChangeColorIconWithText);
 
         int n = a.getIndexCount();//拿到count
 

@@ -1,4 +1,4 @@
-package com.zhuolang.main;
+package com.zhuolang.main.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.zhuolang.main.R;
 
 /**
  * Created by wnf on 2016/10/29.
