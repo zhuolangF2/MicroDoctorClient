@@ -5,4 +5,8 @@ package com.zhuolang.main.util;
  */
 
 public class OkHttpUtil {
+
+    public static void connect(){
+
+    }
 }
