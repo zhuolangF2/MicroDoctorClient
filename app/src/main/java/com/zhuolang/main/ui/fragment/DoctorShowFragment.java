@@ -12,10 +12,11 @@ import com.zhuolang.main.R;
 
 /**
  * Created by wnf on 2016/10/29.
- * “分享圈”界面的fragment
+ * “医师展示”界面的fragment
  */
 
-public class ShareTabFragment extends Fragment{
+
+public class DoctorShowFragment extends Fragment{
 
     private View view = null;
     @Override
@@ -31,8 +32,6 @@ public class ShareTabFragment extends Fragment{
 
         view = inflater.inflate(R.layout.share, container, false);
         Log.d("activityID", "这个是shareTabFragment----------:" + this.toString());
-
-
         return view;
 
     }

@@ -14,14 +14,26 @@
         android:layout_height="wrap_content"
         android:textColor="#fafbfc" />
 
+    <ImageView
+        android:id="@+id/image_item1"
+        android:layout_width="match_parent"
+        android:src="@drawable/homeitem02"
+        android:layout_height="182dp"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/text_weiyi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <LinearLayout
         android:background="#e7ebef"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         android:layout_below="@+id/image_item1">
 
         <LinearLayout
+            android:layout_marginTop="12dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp">
@@ -36,8 +48,8 @@
                     android:src="@drawable/rdoctor"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                    android:layout_width="82dp"
+                    android:layout_height="82dp" />
                 <TextView
                     android:text="医师展示"
                     android:textSize="11dp"
@@ -55,8 +67,8 @@
                     android:src="@drawable/rappointment"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                    android:layout_width="82dp"
+                    android:layout_height="82dp" />
                 <TextView
                     android:text="预约挂号"
                     android:textSize="11dp"
@@ -82,8 +94,8 @@
                     android:src="@drawable/rmyappointment"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                    android:layout_width="82dp"
+                    android:layout_height="82dp" />
                 <TextView
                     android:text="我的预约"
                     android:textSize="11dp"
@@ -101,8 +113,8 @@
                     android:src="@drawable/rlogin"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                    android:layout_width="82dp"
+                    android:layout_height="82dp" />
                 <TextView
                     android:text="登录注册"
                     android:textSize="11dp"
@@ -115,14 +127,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/image_item1"
-        android:layout_width="match_parent"
-        android:src="@drawable/homeitem01"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:layout_below="@+id/text_weiyi"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

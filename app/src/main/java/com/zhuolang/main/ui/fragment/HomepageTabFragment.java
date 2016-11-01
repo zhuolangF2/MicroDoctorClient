@@ -3,13 +3,19 @@ package com.zhuolang.main.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.zhuolang.main.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by wnf on 2016/10/29.
@@ -20,12 +26,6 @@ import com.zhuolang.main.R;
 public class HomepageTabFragment extends Fragment{
 
 
-    private ImageView imageView_item1=null;
-    private ImageView imageView_doctor=null;
-    private ImageView imageView_appointment=null;
-    private ImageView imageView_myappointment=null;
-    private ImageView imageView_login=null;
-
     private View view = null;
 
     @Override
@@ -34,7 +34,7 @@ public class HomepageTabFragment extends Fragment{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,Bundle savedInstanceState){
 
         view=new View(getActivity());
         view = inflater.inflate(R.layout.homepage, container, false);
