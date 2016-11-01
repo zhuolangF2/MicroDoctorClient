@@ -5,4 +5,6 @@ package com.zhuolang.main.common;
  */
 
 public class APPConfig {
+    private static  String base_url="http:localhost:8080/Micro_Doctor";
+    public static  String login = base_url+"/login";
 }
