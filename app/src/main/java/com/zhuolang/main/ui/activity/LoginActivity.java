@@ -6,10 +6,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
@@ -40,10 +42,12 @@ public class LoginActivity extends Activity {
             switch (msg.what){
                 case 0:
                     String result = (String)msg.obj;
-                    if (result.equals("success")){
+                    Log.d("testRun","登陆loginActivity----new Thread(new Runnable() {---result：-"+result);
+                    if (result.equals("login_success")){
                         //登录成功
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         LoginActivity.this.startActivity(intent);
+                        finish();
                     }
                     break;
             }
@@ -63,7 +67,7 @@ public class LoginActivity extends Activity {
      * 初始化控件
      */
     private void init(){
-        et_login_account = (EditText)findViewById(R.id.et_login_account);
+        et_login_account = (EditText)findViewById(R.id.et_login_account);//账号，对应nickname
         et_login_psd = (EditText)findViewById(R.id.et_login_psd);
         bt_login_login = (Button)findViewById(R.id.bt_login_login);
         tv_login_find = (TextView)findViewById(R.id.tv_login_find);
@@ -77,8 +81,10 @@ public class LoginActivity extends Activity {
         bt_login_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //获取账号 密码
                 account = et_login_account.getText().toString().trim();
                 psd = et_login_psd.getText().toString().trim();
+                //运用okhttp框架 子线程获取后台数据
                 final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
                 OkHttpUtils.Param accountParam = new OkHttpUtils.Param("account",account);
                 OkHttpUtils.Param psdParam = new OkHttpUtils.Param("account",account);
@@ -87,18 +93,23 @@ public class LoginActivity extends Activity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        Log.d("testRun","登陆登陆登陆登陆loginActivity----new Thread(new Runnable() {------");
+                        //post方式连接  url
                         OkHttpUtils.post(APPConfig.login, new OkHttpUtils.ResultCallback() {
                             @Override
                             public void onSuccess(Object response) {
+
                                 Message message = new Message();
                                 message.what = 0;
                                 message.obj = response;
+                                Log.d("testRun","请求成功loginActivity--new Runnable()------");
                                 handler.sendMessage(message);
                             }
 
                             @Override
                             public void onFailure(Exception e) {
-
+                                Log.d("testRun","请求失败loginActivity----new Thread(new Runnable() {------");
+//                                Toast.makeText(LoginActivity.this,"请求失败！",Toast.LENGTH_SHORT).show();
                             }
                         },list);
                     }

@@ -37,7 +37,7 @@
         <ImageView
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/men_scan_icon"
+            android:src="@drawable/men_scan_icon1"
             android:background="#5888e7"
             android:layout_width="22dp"
             android:layout_height="22dp" />
@@ -60,7 +60,7 @@
         <ImageView
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/menu_feedback_icon"
+            android:src="@drawable/menu_feedback_icon1"
             android:background="#5888e7"
             android:layout_width="22dp"
             android:layout_height="22dp" />

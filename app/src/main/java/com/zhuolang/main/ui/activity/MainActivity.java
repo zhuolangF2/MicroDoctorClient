@@ -21,7 +21,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private ViewPager mViewPager;
     private List<Fragment> mTabs = new ArrayList<Fragment>();
-//    private String[] mTitles = new String[]{ "First Fragment !", "Second Fragment !" , "Third Fragment !" };
+
     private FragmentPagerAdapter mAdapter;
 
     HomepageTabFragment homepageTabFragment = new HomepageTabFragment();
@@ -51,8 +51,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mViewPager.setOnPageChangeListener(this);
 
     }
-
-    private void initDatas() {//为fragment传输数据
+    //为fragment传输数据
+    private void initDatas() {
         mTabs.add(homepageTabFragment);
         mTabs.add(shareTabFragment);
         mTabs.add(meTabFragment);
@@ -71,6 +71,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         };
     }
 
+    /*
+     *初始化数据和点击事件
+     */
     private void initView(){
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 

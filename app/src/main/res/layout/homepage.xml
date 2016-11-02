@@ -110,13 +110,13 @@
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/image_item_login"
-                    android:src="@drawable/rlogin"
+                    android:src="@drawable/rmyask1"
                     android:layout_gravity="center"
                     android:padding="5dp"
                     android:layout_width="82dp"
                     android:layout_height="82dp" />
                 <TextView
-                    android:text="登录注册"
+                    android:text="我的咨询"
                     android:textSize="11dp"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
