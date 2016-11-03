@@ -6,14 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/id_doctorshow_viewpager"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" >-->
-    <!--</android.support.v4.view.ViewPager>-->
-
     <TextView
-        android:text="医师展示"
+        android:text="我的预约挂号"
         android:textSize="35px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

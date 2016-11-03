@@ -70,7 +70,7 @@ public class LoginActivity extends Activity {
      * 初始化控件
      */
     private void init(){
-        et_login_account = (EditText)findViewById(R.id.et_login_account);//账号，对应nickname
+        et_login_account = (EditText)findViewById(R.id.et_login_account);//账号，对应phone
         et_login_psd = (EditText)findViewById(R.id.et_login_psd);
         bt_login_login = (Button)findViewById(R.id.bt_login_login);
         tv_login_find = (TextView)findViewById(R.id.tv_login_find);
@@ -122,6 +122,15 @@ public class LoginActivity extends Activity {
                     }
 
                 }).start();
+            }
+        });
+        tv_login_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
