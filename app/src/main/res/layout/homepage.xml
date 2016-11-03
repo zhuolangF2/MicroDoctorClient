@@ -7,7 +7,7 @@
         android:id="@+id/text_weiyi"
         android:text="微医"
         android:gravity="center"
-        android:background="#5ea0d7"
+        android:background="#5888e7"
         android:textSize="23dp"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:id="@+id/image_item1"
         android:layout_width="match_parent"
         android:src="@drawable/homeitem02"
-        android:layout_height="182dp"
+        android:layout_height="178dp"
         android:scaleType="fitXY"
         android:layout_below="@+id/text_weiyi"
         android:layout_alignParentLeft="true"
@@ -48,8 +48,8 @@
                     android:src="@drawable/rdoctor"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="82dp"
-                    android:layout_height="82dp" />
+                    android:layout_width="78dp"
+                    android:layout_height="78dp" />
                 <TextView
                     android:text="医师展示"
                     android:textSize="11dp"
@@ -67,8 +67,8 @@
                     android:src="@drawable/rappointment"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="82dp"
-                    android:layout_height="82dp" />
+                    android:layout_width="78dp"
+                    android:layout_height="78dp" />
                 <TextView
                     android:text="预约挂号"
                     android:textSize="11dp"
@@ -94,8 +94,8 @@
                     android:src="@drawable/rmyappointment"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="82dp"
-                    android:layout_height="82dp" />
+                    android:layout_width="78dp"
+                    android:layout_height="78dp" />
                 <TextView
                     android:text="我的预约"
                     android:textSize="11dp"
@@ -113,8 +113,8 @@
                     android:src="@drawable/rmyask1"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:layout_width="82dp"
-                    android:layout_height="82dp" />
+                    android:layout_width="78dp"
+                    android:layout_height="78dp" />
                 <TextView
                     android:text="我的咨询"
                     android:textSize="11dp"

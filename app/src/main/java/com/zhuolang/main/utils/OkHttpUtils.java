@@ -108,12 +108,12 @@ public class OkHttpUtils {
             public void onResponse(Response response) throws IOException {  
                 try {  
                     String str = response.body().string();  
-                    if (callback.mType == String.class) {  
+//                    if (callback.mType == String.class) {
                         sendSuccessCallBack(callback, str);  
-                    } else {  
-                        Object object = new JSONObject(str);
-                        sendSuccessCallBack(callback, object);  
-                    }  
+//                    } else {
+//                        Object object = new JSONObject(str);
+//                        sendSuccessCallBack(callback, object);
+//                    }
                 } catch (final Exception e) {  
                     sendFailCallback(callback, e);
                 }  
@@ -200,7 +200,7 @@ public class OkHttpUtils {
         Type mType;  
   
         public ResultCallback(){  
-            mType = getSuperclassTypeParameter(getClass());  
+//            mType = getSuperclassTypeParameter(getClass());
         }  
   
         static Type getSuperclassTypeParameter(Class<?> subclass) {  

@@ -1,5 +1,6 @@
 package com.zhuolang.main.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.zhuolang.main.R;
+import com.zhuolang.main.ui.activity.ShowmeInfoActivity;
 
 /**
  * Created by wnf on 2016/10/29.
@@ -17,12 +19,12 @@ import com.zhuolang.main.R;
  */
 
 
-public class MeTabFragment extends Fragment{
+public class MeTabFragment extends Fragment implements View.OnClickListener{
 
-    private String mTitle = "Default";//显示在textview上
+
     private ImageView imageView=null;
-    //    private Layout layout;
-    public static final String TITLE = "title";
+
+
     private View view = null;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,15 +34,29 @@ public class MeTabFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
-        if (getArguments() != null){
-            mTitle = getArguments().getString(TITLE);//设置title显示在textView上
-        }
+
         view=new View(getActivity());
 
         view = inflater.inflate(R.layout.me, container, false);
         Log.d("activityID", "这个是meTabFragment----------:" + this.toString());
+
+        initView(view);
+
         return view;
 
     }
 
+    private void initView(View view) {
+        imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
+        imageView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Intent intent = new Intent();
+        intent.setClass(getActivity(),ShowmeInfoActivity.class);
+        startActivity(intent);
+
+    }
 }

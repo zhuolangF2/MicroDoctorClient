@@ -42,12 +42,15 @@ public class LoginActivity extends Activity {
             switch (msg.what){
                 case 0:
                     String result = (String)msg.obj;
-                    Log.d("testRun","登陆loginActivity----new Thread(new Runnable() {---result：-"+result);
                     if (result.equals("login_success")){
                         //登录成功
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                        LoginActivity.this.startActivity(intent);
-                        finish();
+                        Intent intent = new Intent();
+                        intent.setClass(LoginActivity.this, MainActivity.class);
+                        Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(LoginActivity.this,"登陆失败！",Toast.LENGTH_SHORT).show();
                     }
                     break;
             }
@@ -84,10 +87,11 @@ public class LoginActivity extends Activity {
                 //获取账号 密码
                 account = et_login_account.getText().toString().trim();
                 psd = et_login_psd.getText().toString().trim();
+                Log.d("testRun","登陆登陆登陆登陆loginActivity----new Thread(new Runnable() {-----account-"+account+"psd:"+psd);
                 //运用okhttp框架 子线程获取后台数据
                 final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
-                OkHttpUtils.Param accountParam = new OkHttpUtils.Param("account",account);
-                OkHttpUtils.Param psdParam = new OkHttpUtils.Param("account",account);
+                OkHttpUtils.Param accountParam = new OkHttpUtils.Param("phone",account);
+                OkHttpUtils.Param psdParam = new OkHttpUtils.Param("password",psd);
                 list.add(accountParam);
                 list.add(psdParam);
                 new Thread(new Runnable() {
@@ -98,21 +102,25 @@ public class LoginActivity extends Activity {
                         OkHttpUtils.post(APPConfig.login, new OkHttpUtils.ResultCallback() {
                             @Override
                             public void onSuccess(Object response) {
-
                                 Message message = new Message();
                                 message.what = 0;
                                 message.obj = response;
-                                Log.d("testRun","请求成功loginActivity--new Runnable()------");
-                                handler.sendMessage(message);
+                                if(handler.sendMessage(message))
+                                    Toast.makeText(LoginActivity.this,"发送数据成功！",Toast.LENGTH_SHORT).show();
+                                else {
+                                    Toast.makeText(LoginActivity.this,"发送数据失败，请重试！",Toast.LENGTH_SHORT).show();
+                                }
                             }
 
                             @Override
                             public void onFailure(Exception e) {
                                 Log.d("testRun","请求失败loginActivity----new Thread(new Runnable() {------");
-//                                Toast.makeText(LoginActivity.this,"请求失败！",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"请求网络连接失败，请重试！",Toast.LENGTH_SHORT).show();
                             }
                         },list);
+                        finish();
                     }
+
                 }).start();
             }
         });
