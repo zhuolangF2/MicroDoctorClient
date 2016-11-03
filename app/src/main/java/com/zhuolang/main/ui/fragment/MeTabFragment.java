@@ -47,16 +47,28 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view) {
-        imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
-        imageView.setOnClickListener(this);
+//        imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
+//        imageView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
-        Intent intent = new Intent();
-        intent.setClass(getActivity(),ShowmeInfoActivity.class);
-        startActivity(intent);
+    }
 
+    /**
+     * 点击图片
+     *
+     * @param v
+     */
+    private void clickImage(View v){
+        switch (v.getId()){
+            case R.id.image_me_mineinfo:
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),ShowmeInfoActivity.class);
+                startActivity(intent);
+                break;
+
+        }
     }
 }
