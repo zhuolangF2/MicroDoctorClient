@@ -18,7 +18,7 @@ import com.zhuolang.main.ui.activity.*;
  */
 
 
-public class HomepageTabFragment extends Fragment{
+public class HomepageTabFragment extends Fragment implements View.OnClickListener {
 
     private View view = null;
 
@@ -33,56 +33,57 @@ public class HomepageTabFragment extends Fragment{
         view = new View(getActivity());
         view = inflater.inflate(R.layout.homepage, container, false);
         Log.d("activityID", "这个是HomepageTabFragment----------:" + this.toString());
-        //初始化数据
         initView(view);
-        imageConsult = (ImageView) view.findViewById(R.id.image_item_consult);
-        imageDoctor = (ImageView) view.findViewById(R.id.image_item_doctor);
-        imageAppoint = (ImageView) view.findViewById(R.id.image_item_appointment);
-        imageMyAppoint = (ImageView) view.findViewById(R.id.image_item_myappointment);
-        //这里的intent需要关闭吗?怎么关闭???
-        imageDoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), DoctorActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        imageAppoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), AppointActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        imageMyAppoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), MyAppointActivity.class);
-                startActivity(intent);
-            }
-        });
-        imageConsult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), MyConsultActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
         return view;
-
     }
 
     /*
      *初始化数据
      */
     private void initView(View view) {
+        imageConsult = (ImageView) view.findViewById(R.id.image_item_consult);
+        imageConsult.setOnClickListener(this);
+        imageDoctor = (ImageView) view.findViewById(R.id.image_item_doctor);
+        imageDoctor.setOnClickListener(this);
+        imageAppoint = (ImageView) view.findViewById(R.id.image_item_appointment);
+        imageAppoint.setOnClickListener(this);
+        imageMyAppoint = (ImageView) view.findViewById(R.id.image_item_myappointment);
+        imageMyAppoint.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        clickImage(v);
+    }
+
+    /**
+     * 点击图片
+     *
+     * @param v
+     */
+    private void clickImage(View v) {
+        switch (v.getId()) {
+            case R.id.image_item_doctor:
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), DoctorActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.image_item_appointment:
+                Intent intent2 = new Intent();
+                intent2.setClass(getActivity(), AppointActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.image_item_myappointment:
+                Intent intent3 = new Intent();
+                intent3.setClass(getActivity(), MyAppointActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.image_item_consult:
+                Intent intent4 = new Intent();
+                intent4.setClass(getActivity(), MyConsultActivity.class);
+                startActivity(intent4);
+                break;
+        }
+    }
+
 }

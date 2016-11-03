@@ -118,7 +118,7 @@ public class LoginActivity extends Activity {
                                 Toast.makeText(LoginActivity.this,"请求网络连接失败，请重试！",Toast.LENGTH_SHORT).show();
                             }
                         },list);
-                        finish();
+//                        finish();
                     }
 
                 }).start();
