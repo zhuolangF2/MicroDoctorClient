@@ -94,14 +94,12 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
     //    事件处理监听器方法
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // 获取点击ListView item中的内容信息
-        String text = listView.getItemAtPosition(position) + "";
-        // 弹出Toast信息显示点击位置和内容
-        Toast.makeText(this, "position=" + position + "content=" + text, Toast.LENGTH_SHORT).show();
-//        Toast.makeText(this, doctorDtos.toString(),Toast.LENGTH_LONG).show();
         Intent intent = new Intent();
         intent.setClass(DoctorListActivity.this, DoctorDetail.class);
+        DoctorDto doctorDto = doctorDtos.get(position);
+        Gson gson = new Gson();
+        String doctorDtoStr = gson.toJson(doctorDto);
+        intent.putExtra("doctorDtoStr", doctorDtoStr);
         startActivity(intent);
-        finish();
     }
 }
