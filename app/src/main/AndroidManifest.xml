@@ -20,10 +20,11 @@
         <activity android:name=".ui.activity.RegisterActivity"></activity>
         <activity android:name=".ui.activity.MainActivity"></activity>
         <activity android:name=".ui.activity.ShowmeInfoActivity"></activity>
-        <activity android:name=".ui.activity.DoctorActivity"></activity>
+        <activity android:name=".ui.activity.DoctorListActivity"></activity>
         <activity android:name=".ui.activity.AppointActivity"></activity>
         <activity android:name=".ui.activity.MyAppointActivity"></activity>
         <activity android:name=".ui.activity.MyConsultActivity"></activity>
+        <activity android:name=".ui.activity.DoctorDetail"></activity>
     </application>
 
 </manifest>

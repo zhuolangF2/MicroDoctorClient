@@ -1,6 +1,7 @@
 package com.zhuolang.main.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,31 +20,32 @@ import java.util.*;
 /**
  * Created by hzg on 2016/11/3.
  */
-public class DoctorActivity extends Activity implements AdapterView.OnItemClickListener {
+public class DoctorListActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
     private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> dataList;
+    private List<DoctorDto> doctorDtos;
 
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             String result = (String) msg.obj;
             Gson gson = new Gson();
-            List<DoctorDto> doctorDtos = gson.fromJson(result, new TypeToken<List<DoctorDto>>() {
+            doctorDtos = gson.fromJson(result, new TypeToken<List<DoctorDto>>() {
             }.getType());
             dataList = new ArrayList<Map<String, Object>>();
-//            listView = (ListView) findViewById(R.id.listView);
             for (DoctorDto d : doctorDtos) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("imageView", R.drawable.myicon);
-                map.put("textView_name", d.getName());
-                map.put("textView_amount", d.getAmount());
-                map.put("textView_introduction", d.getIntroduction());
-                map.put("textView_office", d.getOffice());
+                map.put("name", d.getName());
+                map.put("amount", d.getAmount());
+                map.put("introduction", d.getIntroduction());
+                map.put("office", d.getOffice());
+                map.put("doctorId", d.getId());
                 dataList.add(map);
             }
-            simpleAdapter = new SimpleAdapter(DoctorActivity.this, dataList, R.layout.doctor_item, new String[]{"imageView", "textView_name", "textView_amount", "textView_introduction", "textView_office"}, new int[]{R.id.imageView, R.id.textView_name, R.id.textView_amount, R.id.textView_introduction, R.id.textView_office});
+            simpleAdapter = new SimpleAdapter(DoctorListActivity.this, dataList, R.layout.doctor_item, new String[]{"imageView", "name", "amount", "introduction", "office"}, new int[]{R.id.imageView, R.id.textView_name, R.id.textView_amount, R.id.textView_introduction, R.id.textView_office});
             listView.setAdapter(simpleAdapter);
         }
     };
@@ -51,7 +53,7 @@ public class DoctorActivity extends Activity implements AdapterView.OnItemClickL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.doctorshow);
+        setContentView(R.layout.activity_doctor);
         listView = (ListView) findViewById(R.id.listView);
         initMotion();
         //设置listview的元素被选中时的事件处理监听器
@@ -74,17 +76,16 @@ public class DoctorActivity extends Activity implements AdapterView.OnItemClickL
                         message.what = 0;
                         message.obj = response;
                         if (handler.sendMessage(message))
-                            Toast.makeText(DoctorActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DoctorListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                         else {
-                            Toast.makeText(DoctorActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DoctorListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Exception e) {
-                        Toast.makeText(DoctorActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DoctorListActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
                     }
-
                 }, list);
             }
         }).start();
@@ -97,5 +98,10 @@ public class DoctorActivity extends Activity implements AdapterView.OnItemClickL
         String text = listView.getItemAtPosition(position) + "";
         // 弹出Toast信息显示点击位置和内容
         Toast.makeText(this, "position=" + position + "content=" + text, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, doctorDtos.toString(),Toast.LENGTH_LONG).show();
+        Intent intent = new Intent();
+        intent.setClass(DoctorListActivity.this, DoctorDetail.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_back">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="医师详细信息"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"/>
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_Dname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_Dnickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_Dage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_Dgender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/Dphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/Daddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/Dsignature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:id="@+id/tv_Dintroduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+
+        <TextView
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:id="@+id/tv_Dhospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+
+        <TextView
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:id="@+id/tv_Doffice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+
+        <TextView
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:id="@+id/tv_Damount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/bt_register_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/button_back"
+            android:text="立即注册"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+</ScrollView>

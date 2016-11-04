@@ -65,7 +65,7 @@ public class HomepageTabFragment extends Fragment implements View.OnClickListene
         switch (v.getId()) {
             case R.id.image_item_doctor:
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), DoctorActivity.class);
+                intent.setClass(getActivity(), DoctorListActivity.class);
                 startActivity(intent);
                 break;
             case R.id.image_item_appointment:
