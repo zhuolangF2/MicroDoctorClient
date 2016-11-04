@@ -48,6 +48,7 @@ public class LoginActivity extends Activity {
                         intent.setClass(LoginActivity.this, MainActivity.class);
                         Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
+                        finish();
                     }
                     else{
                         Toast.makeText(LoginActivity.this,"登陆失败！",Toast.LENGTH_SHORT).show();
@@ -118,19 +119,27 @@ public class LoginActivity extends Activity {
                                 Toast.makeText(LoginActivity.this,"请求网络连接失败，请重试！",Toast.LENGTH_SHORT).show();
                             }
                         },list);
-//                        finish();
                     }
-
                 }).start();
             }
         });
+
         tv_login_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
+            }
+        });
+
+        tv_login_find.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
