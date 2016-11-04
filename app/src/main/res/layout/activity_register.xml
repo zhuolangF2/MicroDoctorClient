@@ -1,10 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_back">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
             android:text="注册页面"
-            android:textSize="40pt"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"/>
+        <TextView
+            android:text="@string/register_info"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:id="@+id/et_register_phone"
+            android:hint=" 手机号"
+            android:textColorHint="#b1c7c4c3"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:phoneNumber="true"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+        <EditText
+            android:id="@+id/et_register_psd"
+            android:hint=" 密码"
+            android:singleLine="true"
+            android:textColorHint="#b1c7c4c3"
+            android:digits="qwertyuiopasdfghjklzxcvbnm0123456789"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+
+        <EditText
+            android:id="@+id/et_register_name"
+            android:hint=" 姓名"
+            android:textColorHint="#b1c7c4c3"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+        <EditText
+            android:id="@+id/et_register_nickname"
+            android:hint=" 昵称"
+            android:singleLine="true"
+            android:textColorHint="#b1c7c4c3"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+        <EditText
+            android:id="@+id/et_register_age"
+            android:hint=" 年龄"
+            android:textColorHint="#b1c7c4c3"
+            android:singleLine="true"
+            android:digits="1234567890"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+
+        <EditText
+            android:id="@+id/et_register_address"
+            android:hint=" 地址"
+            android:singleLine="true"
+            android:textColorHint="#b1c7c4c3"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_back"/>
+
+        <RadioGroup
+            android:layout_marginTop="10dp"
+            android:id="@+id/rg_register_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:text="男"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="女"
+                android:layout_marginLeft="20dp"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_marginTop="5dp"
+            android:id="@+id/register_radiogro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:text="普通用户注册"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/radio_two"
+                android:text="医师注册"
+                android:layout_marginLeft="20dp"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <Button
+            android:id="@+id/bt_register_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/button_back"
+            android:text="立即注册"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+</ScrollView>

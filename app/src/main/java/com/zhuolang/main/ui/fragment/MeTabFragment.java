@@ -47,13 +47,14 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view) {
-//        imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
-//        imageView.setOnClickListener(this);
+        imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
+        imageView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
+        clickImage(v);
     }
 
     /**
@@ -65,7 +66,7 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.image_me_mineinfo:
                 Intent intent = new Intent();
-                intent.setClass(getActivity(),ShowmeInfoActivity.class);
+                intent.setClass(getActivity(), ShowmeInfoActivity.class);
                 startActivity(intent);
                 break;
 

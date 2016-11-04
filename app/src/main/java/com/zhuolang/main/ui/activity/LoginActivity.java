@@ -2,6 +2,7 @@ package com.zhuolang.main.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -48,6 +49,7 @@ public class LoginActivity extends Activity {
                         intent.setClass(LoginActivity.this, MainActivity.class);
                         Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
+                        finish();
                     }
                     else{
                         Toast.makeText(LoginActivity.this,"登陆失败！",Toast.LENGTH_SHORT).show();
@@ -97,7 +99,7 @@ public class LoginActivity extends Activity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("testRun","登陆登陆登陆登陆loginActivity----new Thread(new Runnable() {------");
+                        Log.d("testRun", "登陆登陆登陆登陆loginActivity----new Thread(new Runnable() {------");
                         //post方式连接  url
                         OkHttpUtils.post(APPConfig.login, new OkHttpUtils.ResultCallback() {
                             @Override
@@ -105,32 +107,33 @@ public class LoginActivity extends Activity {
                                 Message message = new Message();
                                 message.what = 0;
                                 message.obj = response;
-                                if(handler.sendMessage(message))
-                                    Toast.makeText(LoginActivity.this,"发送数据成功！",Toast.LENGTH_SHORT).show();
+                                if (handler.sendMessage(message))
+                                    Toast.makeText(LoginActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                                 else {
-                                    Toast.makeText(LoginActivity.this,"发送数据失败，请重试！",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
                             @Override
                             public void onFailure(Exception e) {
-                                Log.d("testRun","请求失败loginActivity----new Thread(new Runnable() {------");
-                                Toast.makeText(LoginActivity.this,"请求网络连接失败，请重试！",Toast.LENGTH_SHORT).show();
+                                Log.d("testRun", "请求失败loginActivity----new Thread(new Runnable() {------");
+                                Toast.makeText(LoginActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
                             }
-                        },list);
+                        }, list);
 //                        finish();
                     }
 
                 }).start();
             }
         });
+
         tv_login_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
     }
