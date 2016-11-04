@@ -132,6 +132,7 @@ public class LoginActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -142,9 +143,8 @@ public class LoginActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
-
-
 }
