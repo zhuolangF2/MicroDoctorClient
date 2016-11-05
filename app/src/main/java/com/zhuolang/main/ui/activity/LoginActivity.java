@@ -16,7 +16,9 @@ import android.widget.Toast;
 
 import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
+import com.zhuolang.main.service.FinduserService;
 import com.zhuolang.main.utils.OkHttpUtils;
+import com.zhuolang.main.utils.SharedPrefsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,12 @@ public class LoginActivity extends Activity {
                 case 0:
                     String result = (String)msg.obj;
                     if (result.equals("login_success")){
+                        //保存登录状态
+                        SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.IS_LOGIN,true);
+                        Intent intentService = new Intent();
+                        intentService.setClass(LoginActivity.this, FinduserService.class);
+                        intentService.putExtra("account",account);
+                        LoginActivity.this.startService(intentService);
                         //登录成功
                         Intent intent = new Intent();
                         intent.setClass(LoginActivity.this, MainActivity.class);
@@ -63,9 +71,17 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        boolean is_login = SharedPrefsUtil.getValue(this,APPConfig.IS_LOGIN,false);
+        if (is_login){
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            this.startActivity(intent);
+        }{
+            init();
+            initMotion();
+        }
         setContentView(R.layout.activity_login);
-        init();
-        initMotion();
+
+
     }
 
     /**
