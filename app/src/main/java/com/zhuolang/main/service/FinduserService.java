@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/5.
  */
-public class FinduserService extends Service{
+public class FindUserService extends Service{
 
     @Override
     public void onCreate() {
@@ -31,7 +31,7 @@ public class FinduserService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("info", "Service--onStartCommand()");
-        String phone="";
+        String phone=intent.getStringExtra("account");
         final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
         OkHttpUtils.Param phoneParam = new OkHttpUtils.Param("phone",phone);
         list.add(phoneParam);

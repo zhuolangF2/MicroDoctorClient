@@ -9,7 +9,10 @@ public class APPConfig {
 //    private static  String base_url="http://192.168.43.123:8080/MicroDoctorServer/";
 //    private static  String base_url="http://192.168.168.102:8080/MicroDoctorServer/";
     private static  String base_url="http://27.45.40.22:80/MicroDoctorServer/";
-    public static String login = base_url + "login_user";
-    public static String showDoctor = base_url + "findByType_user";
-    public static String register = base_url + "add_user";
+    public static  String login = base_url+"login_user";
+    public static  String showDoctor = base_url+"findByType_user";
+    public static  String register=base_url+"add_user";
+
+    public static String IS_LOGIN = "is_login";
+    public static String ACCOUNT = "account";
 }
