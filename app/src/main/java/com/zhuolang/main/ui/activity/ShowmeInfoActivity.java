@@ -6,11 +6,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.gson.Gson;
 import com.zhuolang.main.R;
+import com.zhuolang.main.common.APPConfig;
+import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.utils.SharedPrefsUtil;
 
 /**
@@ -20,7 +24,7 @@ import com.zhuolang.main.utils.SharedPrefsUtil;
 public class ShowmeInfoActivity extends Activity implements View.OnClickListener{
 
     private ImageView imageViewBack;
-
+    private String userData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +35,10 @@ public class ShowmeInfoActivity extends Activity implements View.OnClickListener
     }
 
     private void initView() {
+        userData=SharedPrefsUtil.getValue(this, APPConfig.USERDATA, "");
+        Gson gson=new Gson();
+        DoctorDto user=gson.fromJson(userData,DoctorDto.class);
+        Log.d("testRun","user:"+user.toString());
         imageViewBack=(ImageView)findViewById(R.id.shmeinfo_image_back);
         imageViewBack.setOnClickListener(this);
     }
