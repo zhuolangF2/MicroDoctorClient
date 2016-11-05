@@ -61,8 +61,10 @@ public class FindUserService extends Service{
 //                        Gson gson = new Gson();
 //                        DoctorDto doctorDto=gson.fromJson(userData,DoctorDto.class);
 //                        Log.d("testRun","user.toString()"+doctorDto.toString());
+                        //将userData的json串直接缓存到本地
                         SharedPrefsUtil.putValue(FindUserService.this,APPConfig.USERDATA, userData);
                         Log.d("testRun","user信息缓存成功");
+                        stopSelf();
                     }
 
                     @Override
