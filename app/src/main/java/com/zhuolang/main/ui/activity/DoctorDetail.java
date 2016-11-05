@@ -29,7 +29,7 @@ public class DoctorDetail extends Activity {
     private TextView tv_DoctorAmount;
 
     private Button bt_doctor_back;
-    private ImageView img_doctorDetail_back;
+    private ImageView img_doctorList_back;
 
     private DoctorDto doctorDto;
 
@@ -56,7 +56,7 @@ public class DoctorDetail extends Activity {
         tv_DoctorAmount = (TextView) findViewById(R.id.tv_Damount);
 
         bt_doctor_back = (Button) findViewById(R.id.bt_doctor_back);
-        img_doctorDetail_back = (ImageView) findViewById(R.id.img_doctorDetail_back);
+        img_doctorList_back = (ImageView) findViewById(R.id.img_doctorList_back);
     }
 
     //监听
@@ -67,7 +67,7 @@ public class DoctorDetail extends Activity {
                 finish();
             }
         });
-        img_doctorDetail_back.setOnClickListener(new View.OnClickListener() {
+        img_doctorList_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
