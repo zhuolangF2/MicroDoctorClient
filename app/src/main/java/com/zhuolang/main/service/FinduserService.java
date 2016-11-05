@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/5.
  */
-public class FinduserService extends Service{
+public class FindUserService extends Service{
 
     @Override
     public void onCreate() {

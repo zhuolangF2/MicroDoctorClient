@@ -26,7 +26,7 @@
         <activity android:name=".ui.activity.MyConsultActivity"></activity>
         <activity android:name=".ui.activity.DoctorDetail"></activity>
 
-        <service android:name=".service.FinduserService"></service>
+        <service android:name=".service.FindUserService"></service>
 
     </application>
 
