@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.StartActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,13 +18,16 @@
         </activity>
         <activity android:name=".ui.activity.LoginActivity"></activity>
         <activity android:name=".ui.activity.RegisterActivity"></activity>
-        <activity android:name=".ui.activity.MainActivity"></activity>
+        <activity android:name=".ui.activity.StartActivity"></activity>
         <activity android:name=".ui.activity.ShowmeInfoActivity"></activity>
         <activity android:name=".ui.activity.DoctorListActivity"></activity>
         <activity android:name=".ui.activity.AppointActivity"></activity>
         <activity android:name=".ui.activity.MyAppointActivity"></activity>
         <activity android:name=".ui.activity.MyConsultActivity"></activity>
         <activity android:name=".ui.activity.DoctorDetail"></activity>
+
+        <service android:name=".service.FinduserService"></service>
+
     </application>
 
 </manifest>

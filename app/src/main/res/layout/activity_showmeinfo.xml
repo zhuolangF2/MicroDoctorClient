@@ -16,14 +16,16 @@
             android:layout_height="40dp">
 
             <ImageView
+                android:id="@+id/shmeinfo_image_back"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:src="@drawable/mine"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:src="@drawable/back01"
+                android:layout_width="65dp"
+                android:layout_height="28dp" />
             <TextView
                 android:text="个人信息"
                 android:textSize="20dp"
+                android:textColor="#fffff1"
                 android:layout_marginLeft="22dp"
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
