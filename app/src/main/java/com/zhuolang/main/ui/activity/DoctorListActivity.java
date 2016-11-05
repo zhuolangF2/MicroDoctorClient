@@ -26,6 +26,7 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
     private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> dataList;
     private List<DoctorDto> doctorDtos;
+    private ImageView img_back;
 
     private Handler handler = new Handler() {
         @Override
@@ -58,6 +59,13 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
         initMotion();
         //设置listview的元素被选中时的事件处理监听器
         listView.setOnItemClickListener(this);
+        img_back = (ImageView) findViewById(R.id.img_doctorList_back);
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

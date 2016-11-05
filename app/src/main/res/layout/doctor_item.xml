@@ -25,6 +25,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="黄宗贵"
+                        android:textColor="#ffffff"
                         android:id="@+id/textView_name"
                         android:textSize="20sp" android:layout_gravity="center_vertical"/>
                 <TextView
@@ -32,6 +33,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="接诊量:100"
+                        android:textColor="#ffffff"
                         android:id="@+id/textView_amount"
                         android:textSize="10sp" android:layout_gravity="center_vertical"/>
             </LinearLayout>
@@ -44,6 +46,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="骨科医师"
+                        android:textColor="#ffffff"
                         android:id="@+id/textView_introduction"
                         android:textSize="15sp" android:layout_gravity="center_vertical"/>
                 <TextView
@@ -51,6 +54,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="廉江市人民医院"
+                        android:textColor="#ffffff"
                         android:id="@+id/textView_office"
                         android:textSize="10sp" android:layout_gravity="center"/>
             </LinearLayout>

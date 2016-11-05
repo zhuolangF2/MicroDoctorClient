@@ -8,15 +8,33 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img_doctorDetail_back"
+                    android:src="@drawable/back01"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
-        <TextView
-                android:text="医师详细信息"
-                android:textSize="40sp"
-                android:textColor="#ffffff"
-                android:gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"/>
+            <TextView
+                    android:layout_weight="9"
+                    android:text="医师详细信息"
+                    android:textSize="42px"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/img_doctorDetail_back"
+            />
+
+        </RelativeLayout>
+
         <TextView
                 android:text="@string/app_name"
                 android:textSize="10sp"
@@ -32,7 +50,7 @@
                 android:id="@+id/tv_Dname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
         <TextView
                 android:text="@string/app_name"
                 android:textSize="20sp"
@@ -40,7 +58,7 @@
                 android:id="@+id/tv_Dnickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
         <TextView
                 android:text="@string/app_name"
                 android:textSize="20sp"
@@ -48,7 +66,7 @@
                 android:id="@+id/tv_Dgender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -57,7 +75,7 @@
                 android:id="@+id/tv_Dage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -66,7 +84,7 @@
                 android:id="@+id/tv_Dphone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -84,7 +102,7 @@
                 android:id="@+id/tv_Dsignature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -93,7 +111,7 @@
                 android:id="@+id/tv_Dintroduction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -102,7 +120,7 @@
                 android:id="@+id/tv_Dhospital"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -111,7 +129,7 @@
                 android:id="@+id/tv_Doffice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <TextView
                 android:text="@string/app_name"
@@ -120,7 +138,7 @@
                 android:id="@+id/tv_Damount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="15dp"/>
 
         <Button
                 android:id="@+id/bt_doctor_back"
