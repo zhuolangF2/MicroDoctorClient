@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.service.FindUserService;
-import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
 
