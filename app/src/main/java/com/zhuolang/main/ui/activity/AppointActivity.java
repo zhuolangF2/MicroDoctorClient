@@ -58,7 +58,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctorList);//先选择预约的医生
+        setContentView(R.layout.activity_doctorlist);//先选择预约的医生
         init();
         initMotion();
         listView.setOnItemClickListener(this);

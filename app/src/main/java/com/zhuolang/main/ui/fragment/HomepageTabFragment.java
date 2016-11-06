@@ -75,7 +75,7 @@ public class HomepageTabFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.image_item_myappointment:
                 Intent intent3 = new Intent();
-                intent3.setClass(getActivity(), MyAppointActivity.class);
+                intent3.setClass(getActivity(), MyAppointListActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.image_item_consult:

@@ -54,7 +54,7 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctorList);
+        setContentView(R.layout.activity_doctorlist);
         listView = (ListView) findViewById(R.id.listView);
         initMotion();
         //设置listview的元素被选中时的事件处理监听器

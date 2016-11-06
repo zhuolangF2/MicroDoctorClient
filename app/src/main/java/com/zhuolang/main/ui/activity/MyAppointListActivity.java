@@ -54,7 +54,7 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_appointList);
+        setContentView(R.layout.activity_my_appointlist);
         initMotion();
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
