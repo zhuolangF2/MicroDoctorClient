@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.zhuolang.main.ui.fragment.MeTabFragment;
 import com.zhuolang.main.R;
@@ -21,7 +23,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private ViewPager mViewPager;
     private List<Fragment> mTabs = new ArrayList<Fragment>();
-
+    private long exitTime = 0;
     private FragmentPagerAdapter mAdapter;
 
     HomepageTabFragment homepageTabFragment = new HomepageTabFragment();
@@ -144,6 +146,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             left.setIconAlpha(1 - positionOffset);
             right.setIconAlpha(positionOffset);
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(getApplicationContext(), "再按一次退出", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override

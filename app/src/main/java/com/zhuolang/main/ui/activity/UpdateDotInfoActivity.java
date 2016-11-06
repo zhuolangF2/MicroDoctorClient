@@ -201,7 +201,12 @@ public class UpdateDotInfoActivity extends Activity{
                                     userInfo.setOffice(office);
 
                                     SharedPrefsUtil.putValue(UpdateDotInfoActivity.this, APPConfig.USERDATA, gson.toJson(userInfo));
-                                    Log.d("testRun","UpdateDotInfoActivity  userJson=="+gson.toJson(userInfo));
+                                    Log.d("testRun", "UpdateDotInfoActivity  userJson==" + gson.toJson(userInfo));
+
+                                    Intent intent1 = new Intent();
+                                    intent1.setClass(UpdateDotInfoActivity.this, ShowDotInfoActivity.class);
+                                    startActivity(intent1);
+                                    finish();
                                 } else {
                                     Toast.makeText(UpdateDotInfoActivity.this, "信息修改失败，请重试！", Toast.LENGTH_SHORT).show();
                                 }

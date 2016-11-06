@@ -47,7 +47,7 @@ public class LoginActivity extends Activity {
                     String result = (String)msg.obj;
                     if (result.equals("login_success")){
                         //保存登录状态
-//                        SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.IS_LOGIN,true);
+                        SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.IS_LOGIN,true);
                         Intent intentService = new Intent();
                         intentService.setClass(LoginActivity.this, FindUserService.class);
                         intentService.putExtra("account",account);
@@ -73,8 +73,8 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
-//        boolean is_login = SharedPrefsUtil.getValue(this,APPConfig.IS_LOGIN,false);
-        boolean is_login=false;
+        boolean is_login = SharedPrefsUtil.getValue(this,APPConfig.IS_LOGIN,false);
+//        boolean is_login=false;
         if (is_login){
             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             this.startActivity(intent);
