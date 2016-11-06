@@ -25,6 +25,9 @@
         <activity android:name=".ui.activity.MyAppointActivity"></activity>
         <activity android:name=".ui.activity.MyConsultActivity"></activity>
         <activity android:name=".ui.activity.DoctorDetail"></activity>
+        <activity android:name=".ui.activity.AppointInfoActivity"></activity>
+        <activity android:name=".ui.activity.AppointSuccessActivity"></activity>
+        <activity android:name=".ui.activity.ConnectFailure"></activity>
 
         <service android:name=".service.FindUserService"></service>
 

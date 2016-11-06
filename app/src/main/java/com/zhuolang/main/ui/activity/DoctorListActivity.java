@@ -92,7 +92,11 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
 
                     @Override
                     public void onFailure(Exception e) {
-                        Toast.makeText(DoctorListActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                        //网络连接失败会跳转到连接失败提示页面
+                        Intent intent = new Intent();
+                        intent.setClass(DoctorListActivity.this, ConnectFailure.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }, list);
             }

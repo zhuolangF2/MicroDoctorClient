@@ -9,17 +9,18 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="@color/steelblue"
-        android:layout_height="50dp">
+        android:layout_height="40dp">
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-
+            android:layout_width="60dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
             android:id="@+id/img_doctorList_back"
             android:src="@drawable/back01"/>
         <TextView
             android:text="医师展示"
-            android:textSize="42px"
-            android:id="@+id/textView"
+            android:textSize="20sp"
+            android:id="@+id/tv_doctorList"
+            android:textColor="#ffffff"
             android:layout_gravity="center_vertical"
             android:layout_centerHorizontal="true"
             android:layout_width="0dp"
@@ -27,7 +28,7 @@
             android:gravity="center_horizontal"
             android:layout_height="wrap_content"/>
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent" />
     </LinearLayout>
 

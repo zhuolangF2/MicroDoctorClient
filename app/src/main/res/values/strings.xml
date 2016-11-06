@@ -5,7 +5,9 @@
     <string name="tab_share">动态</string>
     <string name="tab_me">我</string>
     <string name="register_info">请填写以下注册信息，手机号即为登陆账号</string>
-
+    <string name="disease">病症：</string>
+    <string name="NoWrite">未填写</string>
+    <string name="seeTime">预约时间：</string>
 
 
 </resources>
