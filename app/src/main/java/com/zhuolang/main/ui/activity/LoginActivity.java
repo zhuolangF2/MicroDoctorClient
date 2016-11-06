@@ -19,6 +19,7 @@ import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ public class LoginActivity extends Activity {
 //            super.handleMessage(msg);
             switch (msg.what){
                 case 0:
+                    CustomWaitDialog.miss();
                     String result = (String)msg.obj;
                     if (result.equals("login_success")){
                         //保存登录状态
@@ -114,6 +116,7 @@ public class LoginActivity extends Activity {
                 OkHttpUtils.Param psdParam = new OkHttpUtils.Param("password",psd);
                 list.add(accountParam);
                 list.add(psdParam);
+                CustomWaitDialog.show(LoginActivity.this,"登录中...");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
