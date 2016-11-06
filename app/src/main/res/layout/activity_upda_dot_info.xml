@@ -60,17 +60,22 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="40dp">
-
+            <TextView
+                android:text="昵称:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_nickname"
                 android:layout_weight="1"
                 android:maxLength="9"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  昵称 "
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/editsharp"/>
 
         </LinearLayout>
 
@@ -80,17 +85,22 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="40dp">
-
+            <TextView
+                android:text="姓名:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_name"
                 android:layout_weight="1"
                 android:maxLength="9"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  姓名 "
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/editsharp"/>
             
 
         </LinearLayout>
@@ -101,7 +111,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="40dp">
-
+            <TextView
+                android:text="年龄:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_age"
                 android:layout_weight="1"
@@ -109,10 +124,10 @@
                 android:digits="1234567890"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  年龄 "
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/editsharp"/>
            
 
         </LinearLayout>
@@ -123,7 +138,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="40dp">
-
+            <TextView
+                android:text="性别:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_gender"
                 android:layout_weight="1"
@@ -131,8 +151,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
                 android:maxLength="1"
-                android:hint="  性别 "
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             
@@ -145,7 +165,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="80dp">
-
+            <TextView
+                android:text="居住地址:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_address"
                 android:layout_weight="1"
@@ -153,8 +178,9 @@
                 android:maxLines="3"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  地址 27字以内"
+                android:hint="27字以内"
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp" />
            
@@ -167,7 +193,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="80dp">
-
+            <TextView
+                android:text="个性签名:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_signature"
                 android:layout_weight="1"
@@ -175,8 +206,9 @@
                 android:maxLines="3"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  个性签名 45字以内"
+                android:hint="45字以内"
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"  />
             
@@ -189,7 +221,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="80dp">
-
+            <TextView
+                android:text="个人简介:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_introduction"
                 android:layout_weight="1"
@@ -197,8 +234,9 @@
                 android:maxLines="3"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  个人简介 45字以内"
+                android:hint="45字以内"
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp" />
             
@@ -212,7 +250,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="80dp">
-
+            <TextView
+                android:text="所属医院:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_hospital"
                 android:layout_weight="1"
@@ -220,8 +263,9 @@
                 android:maxLines="3"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  所属医院 27字以内"
+                android:hint="27字以内"
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp" />
             
@@ -235,7 +279,12 @@
             android:background="#fcfbfb"
             android:layout_width="match_parent"
             android:layout_height="40dp">
-
+            <TextView
+                android:text="所属科室:"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_update_dotinfo_office"
                 android:layout_weight="1"
@@ -243,8 +292,9 @@
                 android:singleLine="true"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
-                android:hint="  科室 "
+                android:hint="18字以内"
                 android:textSize="18dp"
+                android:background="@drawable/editsharp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
