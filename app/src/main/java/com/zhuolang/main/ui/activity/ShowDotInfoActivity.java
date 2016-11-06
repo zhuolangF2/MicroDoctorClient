@@ -1,10 +1,13 @@
 package com.zhuolang.main.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -22,6 +25,7 @@ public class ShowDotInfoActivity extends Activity implements View.OnClickListene
     private String userDataStr;
     private DoctorDto userInfo;
     private ImageView imageViewBack;
+    private Button bt_updateInfo;
 
     private TextView tv_acount;
     private TextView tv_nickname;
@@ -35,7 +39,10 @@ public class ShowDotInfoActivity extends Activity implements View.OnClickListene
     private TextView tv_hospital;
     private TextView tv_amount;
     private TextView tv_office;
-
+    private LinearLayout ll_hospital;
+    private LinearLayout ll_office;
+    private LinearLayout ll_amount;
+    Gson gson=new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +55,7 @@ public class ShowDotInfoActivity extends Activity implements View.OnClickListene
 
     private void initDoctorView() {
         userDataStr=SharedPrefsUtil.getValue(this, APPConfig.USERDATA, "");
-        Gson gson=new Gson();
-        userInfo=gson.fromJson(userDataStr,DoctorDto.class);
+        userInfo=gson.fromJson(userDataStr, DoctorDto.class);
         tv_acount=(TextView)findViewById(R.id.tv_shdot_acount);
         tv_nickname=(TextView)findViewById(R.id.tv_shdot_nickname);
         tv_name=(TextView)findViewById(R.id.tv_shdot_name);
@@ -62,7 +68,12 @@ public class ShowDotInfoActivity extends Activity implements View.OnClickListene
         tv_hospital=(TextView)findViewById(R.id.tv_shdot_hospital);
         tv_office=(TextView)findViewById(R.id.tv_shdot_office);
         tv_amount=(TextView)findViewById(R.id.tv_shdot_amount);
+        ll_amount= (LinearLayout) findViewById(R.id.ll_showinfo_amount);
+        ll_hospital= (LinearLayout) findViewById(R.id.ll_showinfo_hospt);
+        ll_office= (LinearLayout) findViewById(R.id.ll_showinfo_office);
+        bt_updateInfo= (Button) findViewById(R.id.bt_show_doctorinfo);
         imageViewBack=(ImageView)findViewById(R.id.image_shdotinfo_back);
+        bt_updateInfo.setOnClickListener(this);
         imageViewBack.setOnClickListener(this);
     }
 
@@ -82,15 +93,28 @@ public class ShowDotInfoActivity extends Activity implements View.OnClickListene
         tv_address.setText(userInfo.getAddress());
         tv_signature.setText(userInfo.getSignature());
         tv_introduction.setText(userInfo.getIntroduction());
-        tv_hospital.setText(userInfo.getHospital());
-        tv_office.setText(userInfo.getOffice());
-        tv_amount.setText(""+userInfo.getAmount());
+        if (userInfo.getType()==1){
+            tv_hospital.setText(userInfo.getHospital());
+            tv_office.setText(userInfo.getOffice());
+            tv_amount.setText(""+userInfo.getAmount());
+        }else {
+            ll_hospital.setVisibility(View.GONE);
+            ll_office.setVisibility(View.GONE);
+            ll_amount.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.image_shdotinfo_back:
+                finish();
+                break;
+            case R.id.bt_show_doctorinfo:
+                Intent intent = new Intent();
+                intent.setClass(ShowDotInfoActivity.this, UpdateDotInfoActivity.class);
+                startActivity(intent);
                 finish();
                 break;
             default:

@@ -325,6 +325,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_showinfo_hospt"
             android:layout_marginTop="2dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
@@ -356,6 +357,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_showinfo_office"
             android:layout_marginTop="2dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
@@ -387,6 +389,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_showinfo_amount"
             android:layout_marginTop="2dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
@@ -415,15 +418,17 @@
 
         </LinearLayout>
 
-        <TextView
-            android:text="  修改信息  "
-            android:textSize="23dp"
-            android:background="#fcfbfb"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt_show_doctorinfo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_back"
+            android:text="修改信息"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"/>
     </LinearLayout>
 
 </ScrollView>
