@@ -8,10 +8,10 @@ import com.zhuolang.main.R;
 /**
  * Created by hzg on 2016/11/3.
  */
-public class MyAppointActivity extends Activity {
+public class MyAppointDetailActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myappointment);
+        setContentView(R.layout.activity_my_appointDetails);
     }
 }

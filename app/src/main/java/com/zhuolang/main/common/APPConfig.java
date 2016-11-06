@@ -16,6 +16,7 @@ public class APPConfig {
     public static String findUserByPhone = base_url + "findByPhone_user";
     public static String updatePassword = base_url + "update_password";
     public static String updateUser=base_url+"update_user";
+    public static String showMyAppointList = base_url + "findByPID_appointment";
 
     public static String IS_LOGIN = "is_login";
     public static String ACCOUNT = "account";

@@ -2,7 +2,6 @@ package com.zhuolang.main.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,7 +13,6 @@ import com.google.gson.reflect.TypeToken;
 import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.DoctorDto;
-import com.zhuolang.main.ui.fragment.MeTabFragment;
 import com.zhuolang.main.utils.OkHttpUtils;
 
 import java.util.ArrayList;
@@ -60,7 +58,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor);//先选择预约的医生
+        setContentView(R.layout.activity_doctorList);//先选择预约的医生
         init();
         initMotion();
         listView.setOnItemClickListener(this);
@@ -87,11 +85,8 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
                     }
                     @Override
                     public void onFailure(Exception e) {
-                        //网络连接失败会跳转到连接失败提示页面
-                        Intent intent = new Intent();
-                        intent.setClass(AppointActivity.this, ConnectFailure.class);
-                        startActivity(intent);
-                        finish();
+                        Toast.makeText(AppointActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+
                     }
                 }, list);
             }
