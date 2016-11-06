@@ -11,8 +11,8 @@
 
 
         <TextView
-            android:text="注册页面"
-            android:textSize="40sp"
+            android:text="注         册"
+            android:textSize="35sp"
             android:textColor="#ffffff"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
@@ -31,6 +31,7 @@
             android:id="@+id/et_register_phone"
             android:hint=" 手机号"
             android:textColorHint="#b1c7c4c3"
+            android:paddingLeft="20dp"
             android:layout_width="match_parent"
             android:singleLine="true"
             android:maxLength="11"
@@ -43,11 +44,13 @@
         <EditText
             android:id="@+id/et_register_psd"
             android:hint=" 密码"
+            android:password="true"
             android:singleLine="true"
             android:textColorHint="#b1c7c4c3"
+            android:paddingLeft="20dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm0123456789"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="10dp"
@@ -58,6 +61,8 @@
             android:hint=" 姓名"
             android:maxLength="9"
             android:textColorHint="#b1c7c4c3"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="50dp"
@@ -68,6 +73,7 @@
             android:id="@+id/et_register_nickname"
             android:hint=" 昵称"
             android:maxLength="9"
+            android:paddingLeft="20dp"
             android:singleLine="true"
             android:textColorHint="#b1c7c4c3"
             android:layout_width="match_parent"
@@ -81,6 +87,7 @@
             android:hint=" 年龄"
             android:maxLength="3"
             android:textColorHint="#b1c7c4c3"
+            android:paddingLeft="20dp"
             android:singleLine="true"
             android:digits="1234567890"
             android:layout_width="match_parent"
@@ -96,6 +103,7 @@
             android:singleLine="true"
             android:maxLength="27"
             android:textColorHint="#b1c7c4c3"
+            android:paddingLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="50dp"
@@ -103,8 +111,15 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/edittext_back"/>
 
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="性别："/>
         <RadioGroup
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:id="@+id/rg_register_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,7 +139,13 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content" />
         </RadioGroup>
-
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="用户类型："/>
         <RadioGroup
             android:layout_marginTop="5dp"
             android:id="@+id/register_radiogro"

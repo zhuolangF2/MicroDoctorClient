@@ -19,6 +19,7 @@
         android:hint="请输入账号"
         android:phoneNumber="true"
         android:maxLength="11"
+        android:paddingLeft="20dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="50dp"
@@ -28,6 +29,8 @@
     <EditText
         android:id="@+id/et_login_psd"
         android:hint="请输入密码"
+        android:paddingLeft="20dp"
+        android:singleLine="true"
         android:password="true"
         android:layout_width="match_parent"
         android:layout_height="35dp"
