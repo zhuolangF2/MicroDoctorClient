@@ -20,6 +20,7 @@
         <activity android:name=".ui.activity.RegisterActivity"></activity>
         <activity android:name=".ui.activity.MainActivity"></activity>
         <activity android:name=".ui.activity.ShowmeInfoActivity"></activity>
+        <activity android:name=".ui.activity.ShowDotInfoActivity"></activity>
         <activity android:name=".ui.activity.DoctorListActivity"></activity>
         <activity android:name=".ui.activity.AppointActivity"></activity>
         <activity android:name=".ui.activity.MyAppointActivity"></activity>
@@ -28,6 +29,9 @@
         <activity android:name=".ui.activity.AppointInfoActivity"></activity>
         <activity android:name=".ui.activity.AppointSuccessActivity"></activity>
         <activity android:name=".ui.activity.ConnectFailure"></activity>
+        <activity android:name=".ui.activity.UpdatePswActivity"></activity>
+        <activity android:name=".ui.activity.SettingActivity"></activity>
+        <activity android:name=".ui.activity.UpdateDotInfoActivity"></activity>
 
         <service android:name=".service.FindUserService"></service>
 

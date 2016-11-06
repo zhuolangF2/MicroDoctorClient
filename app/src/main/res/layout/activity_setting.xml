@@ -6,30 +6,31 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:background="#5888e7"
         android:layout_width="match_parent"
-        android:layout_height="135dp">
+        android:layout_height="40dp">
+
         <ImageView
-            android:id="@+id/image_me_mineinfo"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/myicon"
-            android:background="#5888e7"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
+            android:id="@+id/setting_iv_back"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/back01"
+            android:layout_width="65dp"
+            android:layout_height="28dp" />
         <TextView
-            android:text="我"
-            android:textSize="15dp"
-            android:gravity="center"
+            android:text="设置"
+            android:textSize="20dp"
+            android:textColor="#fffff1"
+            android:layout_marginLeft="90dp"
+            android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-
-
     <LinearLayout
+        android:id="@+id/ll_setting_updatepsw"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:background="#fcfbfb"
@@ -45,7 +46,7 @@
         <TextView
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:text=" 我的咨询 "
+            android:text=" 修改密码 "
             android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -68,7 +69,7 @@
         <TextView
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:text=" 我的预约 "
+            android:text=" 通用 "
             android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -76,7 +77,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/me_test"
         android:orientation="horizontal"
         android:layout_marginTop="12dp"
         android:background="#fcfbfb"
@@ -92,63 +92,13 @@
         <TextView
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:text=" 帮助与反馈 "
+            android:text=" 关于微医 "
             android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/ll_me_setting"
-        android:orientation="horizontal"
-        android:layout_marginTop="12dp"
-        android:background="#fcfbfb"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/settings"
-
-            android:background="#5888e7"
-            android:layout_width="22dp"
-            android:layout_height="22dp" />
-        <TextView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:text=" 设置 "
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/me_ll_finish"
-        android:orientation="horizontal"
-        android:layout_marginTop="12dp"
-        android:background="#fcfbfb"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/finish01"
-
-            android:background="#5888e7"
-            android:layout_width="22dp"
-            android:layout_height="22dp" />
-        <TextView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:text=" 退出 "
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
 
 
 
