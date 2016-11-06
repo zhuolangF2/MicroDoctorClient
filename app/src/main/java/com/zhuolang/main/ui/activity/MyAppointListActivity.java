@@ -11,9 +11,9 @@ import android.widget.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhuolang.main.R;
+import com.zhuolang.main.adapter.MyAppointListAdapter;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.Appointment;
-import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.model.User;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
@@ -27,8 +27,9 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
     private ListView listView;
     private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> dataList;
-    private List<Appointment> appointments;
+    private List<Appointment> appointments = new ArrayList<>();
     private ImageView img_back;
+    private MyAppointListAdapter adapter;
 
     private Handler handler = new Handler(){
         @Override
@@ -37,17 +38,19 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
             String result = (String) msg.obj;
             Gson gson = new Gson();
             appointments = gson.fromJson(result, new TypeToken<List<Appointment>>() {}.getType());
-            dataList = new ArrayList<Map<String, Object>>();
-            for (Appointment a : appointments) {
-                Map<String, Object> map = new HashMap<String, Object>();
-//                map.put("imageView", R.drawable.myicon);
-//                map.put("name", a.getName());
-//                map.put("amount", d.getAmount());
-//                map.put("introduction", d.getIntroduction());
-//                map.put("office", d.getOffice());
-//                map.put("doctorId", d.getId());
-                dataList.add(map);
-            }
+            adapter = new MyAppointListAdapter(MyAppointListActivity.this,appointments);
+            listView.setAdapter(adapter);
+//            dataList = new ArrayList<Map<String, Object>>();
+//            for (Appointment a : appointments) {
+//                Map<String, Object> map = new HashMap<String, Object>();
+////                map.put("imageView", R.drawable.myicon);
+////                map.put("name", a.getName());
+////                map.put("amount", d.getAmount());
+////                map.put("introduction", d.getIntroduction());
+////                map.put("office", d.getOffice());
+////                map.put("doctorId", d.getId());
+//                dataList.add(map);
+//            }
         }
     };
 
@@ -56,7 +59,8 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointlist);
         initMotion();
-        listView = (ListView) findViewById(R.id.listView);
+
+        listView = (ListView) findViewById(R.id.lv_my_appoint_list);
         listView.setOnItemClickListener(this);
         img_back = (ImageView) findViewById(R.id.img_back);
         img_back.setOnClickListener(new View.OnClickListener() {
