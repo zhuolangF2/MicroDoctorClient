@@ -18,6 +18,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,7 +151,7 @@ public class RegisterActivity extends Activity {
                     list.add(typeParam);
 //                list.add(signatureParam);
 //                list.add(introductionParam);
-
+                    CustomWaitDialog.show(RegisterActivity.this, "注册中...");
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -166,10 +167,10 @@ public class RegisterActivity extends Activity {
                                         Message message = new Message();
                                         message.what = 0;
                                         message.obj = response;
-                                        if (handler.sendMessage(message))
-                                            Toast.makeText(RegisterActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
-                                        else {
-                                            Toast.makeText(RegisterActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+                                        if (handler.sendMessage(message)) {
+//                                            Toast.makeText(RegisterActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                        }else {
+//                                            Toast.makeText(RegisterActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
@@ -206,12 +207,12 @@ public class RegisterActivity extends Activity {
 
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this, MainActivity.class);
-                        Toast.makeText(RegisterActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(RegisterActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                     }
                     else{
-                        Toast.makeText(RegisterActivity.this,"注册失败！",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this,"注册失败，请重试！",Toast.LENGTH_SHORT).show();
                     }
                     break;
             }

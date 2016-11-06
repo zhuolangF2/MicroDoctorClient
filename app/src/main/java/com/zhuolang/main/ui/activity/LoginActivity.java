@@ -128,10 +128,11 @@ public class LoginActivity extends Activity {
                                 Message message = new Message();
                                 message.what = 0;
                                 message.obj = response;
-                                if (handler.sendMessage(message))
-                                    Toast.makeText(LoginActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                if (handler.sendMessage(message)) {
+//                                    Toast.makeText(LoginActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                }
                                 else {
-                                    Toast.makeText(LoginActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(LoginActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
