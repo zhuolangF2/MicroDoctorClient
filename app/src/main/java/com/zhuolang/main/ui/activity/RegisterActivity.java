@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
+import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
 
 import java.util.ArrayList;
@@ -198,6 +199,11 @@ public class RegisterActivity extends Activity {
                     if (result.equals("register_success")){
                         //注册成功
                         Toast.makeText(RegisterActivity.this,"注册成功！",Toast.LENGTH_SHORT).show();
+                        Intent intentService = new Intent();
+                        intentService.setClass(RegisterActivity.this, FindUserService.class);
+                        intentService.putExtra("account",phone);
+                        RegisterActivity.this.startService(intentService);
+
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this, MainActivity.class);
                         Toast.makeText(RegisterActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();

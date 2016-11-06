@@ -1,15 +1,10 @@
 package com.zhuolang.main.ui.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -22,7 +17,7 @@ import com.zhuolang.main.utils.SharedPrefsUtil;
  * Created by wnf on 2016/11/1.
  */
 
-public class ShowmeInfoActivity extends Activity implements View.OnClickListener{
+public class ShowDotInfoActivity extends Activity implements View.OnClickListener{
 
     private String userDataStr;
     private DoctorDto userInfo;
@@ -37,38 +32,41 @@ public class ShowmeInfoActivity extends Activity implements View.OnClickListener
     private TextView tv_address;
     private TextView tv_signature;
     private TextView tv_introduction;
+    private TextView tv_hospital;
+    private TextView tv_amount;
+    private TextView tv_office;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //获取当前用户信息
-
-        setContentView(R.layout.activity_showmeinfo);
-        initView();
-        initDatas();
-
+        setContentView(R.layout.activity_sh_me_dot_info);
+        initDoctorView();
+        initDoctorDatas();
     }
-    private void initView() {
+
+
+    private void initDoctorView() {
         userDataStr=SharedPrefsUtil.getValue(this, APPConfig.USERDATA, "");
         Gson gson=new Gson();
         userInfo=gson.fromJson(userDataStr,DoctorDto.class);
-        Log.d("testRun","user:"+userInfo.toString());
-        Log.d("testRun","user.getAddress:"+userInfo.getAddress());
-        Log.d("testRun","user.getNickname:"+userInfo.getNickname());
-        tv_acount=(TextView)findViewById(R.id.tv_sacount);
-        tv_nickname=(TextView)findViewById(R.id.tv_snickname);
-        tv_name=(TextView)findViewById(R.id.tv_sname);
-        tv_phone=(TextView)findViewById(R.id.tv_sphone);
-        tv_age=(TextView)findViewById(R.id.tv_sage);
-        tv_gender=(TextView)findViewById(R.id.tv_sgender);
-        tv_address=(TextView)findViewById(R.id.tv_saddress);
-        tv_signature=(TextView)findViewById(R.id.tv_ssignature);
-        tv_introduction=(TextView)findViewById(R.id.tv_sintroduction);
-        imageViewBack=(ImageView)findViewById(R.id.shmeinfo_image_back);
+        tv_acount=(TextView)findViewById(R.id.tv_shdot_acount);
+        tv_nickname=(TextView)findViewById(R.id.tv_shdot_nickname);
+        tv_name=(TextView)findViewById(R.id.tv_shdot_name);
+        tv_phone=(TextView)findViewById(R.id.tv_shdot_phone);
+        tv_age=(TextView)findViewById(R.id.tv_shdot_age);
+        tv_gender=(TextView)findViewById(R.id.tv_shdot_gender);
+        tv_address=(TextView)findViewById(R.id.tv_shdot_address);
+        tv_signature=(TextView)findViewById(R.id.tv_shdot_signature);
+        tv_introduction=(TextView)findViewById(R.id.tv_shdot_introduction);
+        tv_hospital=(TextView)findViewById(R.id.tv_shdot_hospital);
+        tv_office=(TextView)findViewById(R.id.tv_shdot_office);
+        tv_amount=(TextView)findViewById(R.id.tv_shdot_amount);
+        imageViewBack=(ImageView)findViewById(R.id.image_shdotinfo_back);
         imageViewBack.setOnClickListener(this);
     }
 
-    private void initDatas() {
+    private void initDoctorDatas() {
         tv_acount.setText(userInfo.getPhone());
         tv_nickname.setText(userInfo.getNickname());
         tv_name.setText(userInfo.getName());
@@ -84,13 +82,15 @@ public class ShowmeInfoActivity extends Activity implements View.OnClickListener
         tv_address.setText(userInfo.getAddress());
         tv_signature.setText(userInfo.getSignature());
         tv_introduction.setText(userInfo.getIntroduction());
+        tv_hospital.setText(userInfo.getHospital());
+        tv_office.setText(userInfo.getOffice());
+        tv_amount.setText(""+userInfo.getAmount());
     }
-
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.shmeinfo_image_back:
+            case R.id.image_shdotinfo_back:
                 finish();
                 break;
             default:

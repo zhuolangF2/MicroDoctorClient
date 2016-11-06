@@ -14,8 +14,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.gson.Gson;
 import com.zhuolang.main.R;
+import com.zhuolang.main.common.APPConfig;
+import com.zhuolang.main.model.DoctorDto;
+import com.zhuolang.main.ui.activity.MainActivity;
+import com.zhuolang.main.ui.activity.SettingActivity;
+import com.zhuolang.main.ui.activity.ShowDotInfoActivity;
 import com.zhuolang.main.ui.activity.ShowmeInfoActivity;
+import com.zhuolang.main.ui.activity.UpdateDotInfoActivity;
+import com.zhuolang.main.utils.SharedPrefsUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by wnf on 2016/10/29.
@@ -25,9 +36,12 @@ import com.zhuolang.main.ui.activity.ShowmeInfoActivity;
 
 public class MeTabFragment extends Fragment implements View.OnClickListener{
 
-
+    private String userDataStr1="";
+    private DoctorDto userInfo=null;
     private ImageView imageView=null;
     private LinearLayout ll_finish;
+    private LinearLayout ll_setting;
+    private LinearLayout ll_test;
 
 
     private View view = null;
@@ -46,15 +60,23 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
         Log.d("activityID", "这个是meTabFragment----------:" + this.toString());
 
         initView(view);
-
         return view;
 
     }
 
     private void initView(View view) {
+        userDataStr1=SharedPrefsUtil.getValue(getContext(), APPConfig.USERDATA, "");
+        Gson gson=new Gson();
+        userInfo=gson.fromJson(userDataStr1,DoctorDto.class);
+        Log.d("testRun","userDataStr1====="+userDataStr1);
+
         imageView=(ImageView)view.findViewById(R.id.image_me_mineinfo);
         ll_finish= (LinearLayout) view.findViewById(R.id.me_ll_finish);
+        ll_setting= (LinearLayout) view.findViewById(R.id.ll_me_setting);
+        ll_test= (LinearLayout) view.findViewById(R.id.me_test);
+        ll_test.setOnClickListener(this);
         ll_finish.setOnClickListener(this);
+        ll_setting.setOnClickListener(this);
         imageView.setOnClickListener(this);
     }
 
@@ -73,7 +95,11 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.image_me_mineinfo:
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), ShowmeInfoActivity.class);
+                if (userInfo.getType()==1){
+                    intent.setClass(getActivity(), ShowDotInfoActivity.class);
+                }else {
+                    intent.setClass(getActivity(), ShowmeInfoActivity.class);
+                }
                 startActivity(intent);
                 break;
             case R.id.me_ll_finish:
@@ -94,6 +120,16 @@ public class MeTabFragment extends Fragment implements View.OnClickListener{
                     }
                 });
                 dialog.show();
+                break;
+            case R.id.ll_me_setting:
+                Intent intentSet = new Intent();
+                intentSet.setClass(getActivity(), SettingActivity.class);
+                startActivity(intentSet);
+                break;
+            case R.id.me_test:
+                Intent intent2 = new Intent();
+                intent2.setClass(getActivity(), UpdateDotInfoActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

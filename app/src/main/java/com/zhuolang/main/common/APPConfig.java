@@ -13,6 +13,7 @@ public class APPConfig {
     public static  String showDoctor = base_url+"findByType_user";
     public static  String register=base_url+"add_user";
     public static  String findUserByPhone=base_url+"findByPhone_user";
+    public static  String updatePassword=base_url+"update_password";
 
     public static String IS_LOGIN = "is_login";
     public static String ACCOUNT = "account";

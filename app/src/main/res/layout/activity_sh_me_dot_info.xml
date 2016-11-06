@@ -16,7 +16,7 @@
             android:layout_height="40dp">
 
             <ImageView
-                android:id="@+id/shmeinfo_image_back"
+                android:id="@+id/image_shdotinfo_back"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dp"
                 android:src="@drawable/back01"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_snickname"
+                android:id="@+id/tv_shdot_nickname"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sacount"
+                android:id="@+id/tv_shdot_acount"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sname"
+                android:id="@+id/tv_shdot_name"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -160,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sphone"
+                android:id="@+id/tv_shdot_phone"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -189,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sage"
+                android:id="@+id/tv_shdot_age"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -218,7 +218,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sgender"
+                android:id="@+id/tv_shdot_gender"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -248,14 +248,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_saddress"
+                android:id="@+id/tv_shdot_address"
                 android:layout_weight="1"
-                android:maxLength="27"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
                 android:layout_marginRight="13dp"
                 android:text="地址"
                 android:textSize="18dp"
+                android:maxLength="27"
                 android:singleLine="false"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content" />
@@ -279,7 +279,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_ssignature"
+                android:id="@+id/tv_shdot_signature"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
@@ -310,15 +310,106 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tv_sintroduction"
+                android:id="@+id/tv_shdot_introduction"
                 android:layout_weight="1"
-                android:maxLength="45"
-                android:singleLine="false"
                 android:layout_gravity="center_vertical"
                 android:gravity="right"
                 android:layout_marginRight="13dp"
                 android:text="个人简介"
                 android:textSize="18dp"
+                android:maxLength="45"
+                android:singleLine="false"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:background="#fcfbfb"
+            android:minHeight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:text="  所属医院 "
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_shdot_hospital"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:layout_marginRight="13dp"
+                android:text="所属医院"
+                android:textSize="18dp"
+                android:maxLength="27"
+                android:singleLine="false"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:background="#fcfbfb"
+            android:minHeight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:text="  科室 "
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_shdot_office"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:layout_marginRight="13dp"
+                android:text="科室"
+                android:textSize="18dp"
+                android:maxLength="18"
+                android:singleLine="false"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:background="#fcfbfb"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:text="  接诊量 "
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_shdot_amount"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:layout_marginRight="13dp"
+                android:text="接诊量"
+                android:textSize="18dp"
+                android:singleLine="true"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content" />
 
