@@ -53,7 +53,8 @@ public class AppointInfoActivity extends Activity {
                         intent.setClass(AppointInfoActivity.this, AppointSuccessActivity.class);
                         intent.putExtra("disease", disease);
                         intent.putExtra("seeTime",seeTime);
-                        intent.putExtra("doctorName",user.getName());
+                        intent.putExtra("userName",user.getName());
+                        intent.putExtra("doctorName",doctorDto.getName());
                         startActivity(intent);
                         finish();
                     } else {

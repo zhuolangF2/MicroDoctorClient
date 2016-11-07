@@ -93,9 +93,11 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
                         Message message = new Message();
                         message.what = 0;
                         message.obj = response;
-                        if (handler.sendMessage(message)) {
-//                            Toast.makeText(MyAppointListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                        if (response.toString().equals("find_failure")) {
+                            CustomWaitDialog.miss();
+                            Toast.makeText(MyAppointListActivity.this, "没有找到您的预约数据！", Toast.LENGTH_LONG).show();
                         }else {
+                            handler.sendMessage(message);
 //                            Toast.makeText(MyAppointListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
