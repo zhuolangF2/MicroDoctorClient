@@ -20,6 +20,7 @@ import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,6 +80,7 @@ public class UpdatePswActivity extends Activity {
                     list.add(userIdParam);
                     list.add(oldPswParam);
                     list.add(newPsdParam);
+                    CustomWaitDialog.show(UpdatePswActivity.this, "修改密码中...");
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -90,10 +92,10 @@ public class UpdatePswActivity extends Activity {
                                     Message message = new Message();
                                     message.what = 0;
                                     message.obj = response;
-                                    if (handler.sendMessage(message))
-                                        Toast.makeText(UpdatePswActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
-                                    else {
-                                        Toast.makeText(UpdatePswActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+                                    if (handler.sendMessage(message)) {
+//                                        Toast.makeText(UpdatePswActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                    }else {
+//                                        Toast.makeText(UpdatePswActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -101,6 +103,7 @@ public class UpdatePswActivity extends Activity {
                                 public void onFailure(Exception e) {
                                     Log.d("testRun", "请求失败loginActivity----new Thread(new Runnable() {------");
                                     Toast.makeText(UpdatePswActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                                    CustomWaitDialog.miss();
                                 }
                             }, list);
                         }
@@ -126,9 +129,11 @@ public class UpdatePswActivity extends Activity {
                     String result = (String)msg.obj;
                     if (result.equals("updatePassword_success")){
                         Toast.makeText(UpdatePswActivity.this,"密码修改成功，请记住密码！",Toast.LENGTH_SHORT).show();
+                        CustomWaitDialog.miss();
                     }
                     else{
                         Toast.makeText(UpdatePswActivity.this,"密码修改失败，请重试！",Toast.LENGTH_SHORT).show();
+                        CustomWaitDialog.miss();
                     }
                     break;
             }

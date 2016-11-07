@@ -19,6 +19,7 @@ import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -179,6 +180,7 @@ public class UpdateDotInfoActivity extends Activity{
                 list.add(hospitalParam);
                 list.add(officeParam);
                 list.add(typeParam);
+                CustomWaitDialog.show(UpdateDotInfoActivity.this,"修改信息中...");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -190,6 +192,7 @@ public class UpdateDotInfoActivity extends Activity{
                             public void onSuccess(Object response) {
                                 if (response.equals("update_success")) {
                                     Toast.makeText(UpdateDotInfoActivity.this, "信息修改成功！", Toast.LENGTH_SHORT).show();
+                                    CustomWaitDialog.miss();
                                     userInfo.setNickname(nickname);
                                     userInfo.setName(name);
                                     userInfo.setGender(Integer.parseInt(gender));
@@ -209,12 +212,14 @@ public class UpdateDotInfoActivity extends Activity{
                                     finish();
                                 } else {
                                     Toast.makeText(UpdateDotInfoActivity.this, "信息修改失败，请重试！", Toast.LENGTH_SHORT).show();
+                                    CustomWaitDialog.miss();
                                 }
                             }
                             @Override
                             public void onFailure(Exception e) {
                                 Log.d("testRun", "请求失败loginActivity----new Thread(new Runnable() {------");
                                 Toast.makeText(UpdateDotInfoActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                                CustomWaitDialog.miss();
                             }
                         }, list);
                     }

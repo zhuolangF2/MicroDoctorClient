@@ -18,6 +18,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.service.FindUserService;
 import com.zhuolang.main.utils.OkHttpUtils;
+import com.zhuolang.main.utils.SharedPrefsUtil;
 import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
@@ -162,6 +163,7 @@ public class RegisterActivity extends Activity {
                                 public void onSuccess(Object response) {
                                     if (response.equals("register_failure")){
                                         Toast.makeText(RegisterActivity.this, "已存在该手机号用户，请换个号码注册！", Toast.LENGTH_LONG).show();
+                                        CustomWaitDialog.miss();
                                     }
                                     else {
                                         Message message = new Message();
@@ -179,6 +181,7 @@ public class RegisterActivity extends Activity {
                                 public void onFailure(Exception e) {
                                     Log.d("testRun", "请求失败loginActivity----new Thread(new Runnable() {------");
                                     Toast.makeText(RegisterActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                                    CustomWaitDialog.miss();
                                 }
                             }, list);
                         }
@@ -202,9 +205,10 @@ public class RegisterActivity extends Activity {
                         Toast.makeText(RegisterActivity.this,"注册成功！",Toast.LENGTH_SHORT).show();
                         Intent intentService = new Intent();
                         intentService.setClass(RegisterActivity.this, FindUserService.class);
-                        intentService.putExtra("account",phone);
+                        intentService.putExtra("account", phone);
                         RegisterActivity.this.startService(intentService);
-
+                        //保存登录状态
+                        SharedPrefsUtil.putValue(RegisterActivity.this, APPConfig.IS_LOGIN, true);
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this, MainActivity.class);
 //                        Toast.makeText(RegisterActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
@@ -213,6 +217,7 @@ public class RegisterActivity extends Activity {
                     }
                     else{
                         Toast.makeText(RegisterActivity.this,"注册失败，请重试！",Toast.LENGTH_SHORT).show();
+                        CustomWaitDialog.miss();
                     }
                     break;
             }

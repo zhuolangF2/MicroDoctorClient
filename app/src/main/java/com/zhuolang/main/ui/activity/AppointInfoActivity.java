@@ -17,6 +17,7 @@ import com.zhuolang.main.model.User;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
 import com.zhuolang.main.utils.TimeUtil;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -54,6 +55,7 @@ public class AppointInfoActivity extends Activity {
                         finish();
                     } else {
                         Toast.makeText(AppointInfoActivity.this, "预约失败！", Toast.LENGTH_SHORT).show();
+                        CustomWaitDialog.miss();
                     }
                     break;
             }
@@ -112,7 +114,7 @@ public class AppointInfoActivity extends Activity {
             public void onClick(View v) {
                 getData();
                 if (disease.equals("")) {
-                    Toast.makeText(AppointInfoActivity.this,"请填写病症！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AppointInfoActivity.this, "请填写病症！", Toast.LENGTH_SHORT).show();
                 } else if (tv.getText().equals("未选择")) {
                     Toast.makeText(AppointInfoActivity.this, "请选择预约时间！", Toast.LENGTH_SHORT).show();
                 } else {
@@ -132,6 +134,7 @@ public class AppointInfoActivity extends Activity {
         list.add(doctorIdParam);
         list.add(seeTimeParam);
         list.add(diseaseParam);
+        CustomWaitDialog.show(AppointInfoActivity.this, "预约中...");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -141,19 +144,21 @@ public class AppointInfoActivity extends Activity {
                         Message message = new Message();
                         message.what = 0;
                         message.obj = response;
-                        if (handler.sendMessage(message))
-                            Toast.makeText(AppointInfoActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
-                        else {
-                            Toast.makeText(AppointInfoActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+                        if (handler.sendMessage(message)) {
+//                            Toast.makeText(AppointInfoActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                        }else {
+//                            Toast.makeText(AppointInfoActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Exception e) {
+                        Toast.makeText(AppointInfoActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                        CustomWaitDialog.miss();
                         //网络连接失败会跳转到连接失败提示页面
-                        Intent intent = new Intent();
-                        intent.setClass(AppointInfoActivity.this, ConnectFailure.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent();
+//                        intent.setClass(AppointInfoActivity.this, ConnectFailure.class);
+//                        startActivity(intent);
                     }
                 }, list);
             }

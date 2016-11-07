@@ -83,10 +83,10 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
                         Message message = new Message();
                         message.what = 0;
                         message.obj = response;
-                        if (handler.sendMessage(message))
-                            Toast.makeText(DoctorListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
-                        else {
-                            Toast.makeText(DoctorListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+                        if (handler.sendMessage(message)) {
+//                            Toast.makeText(DoctorListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                        }else {
+//                            Toast.makeText(DoctorListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
 

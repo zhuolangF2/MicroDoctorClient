@@ -14,6 +14,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.utils.OkHttpUtils;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,6 +69,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
         final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
         OkHttpUtils.Param typeParam = new OkHttpUtils.Param("type", "1");
         list.add(typeParam);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -78,15 +80,15 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
                         message.what = 0;
                         message.obj = response;
                         if (handler.sendMessage(message)) {
-                            Toast.makeText(AppointActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AppointActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(AppointActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AppointActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
                     public void onFailure(Exception e) {
                         Toast.makeText(AppointActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
-
+//                        CustomWaitDialog.miss();
                     }
                 }, list);
             }

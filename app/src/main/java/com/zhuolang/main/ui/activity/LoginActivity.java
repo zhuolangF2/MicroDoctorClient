@@ -55,9 +55,9 @@ public class LoginActivity extends Activity {
                         intentService.putExtra("account",account);
                         LoginActivity.this.startService(intentService);
                         //登录成功
+                        Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent();
                         intent.setClass(LoginActivity.this, MainActivity.class);
-                        Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                     }
@@ -140,6 +140,7 @@ public class LoginActivity extends Activity {
                             public void onFailure(Exception e) {
                                 Log.d("testRun", "请求失败loginActivity----new Thread(new Runnable() {------");
                                 Toast.makeText(LoginActivity.this, "请求网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
+                                CustomWaitDialog.miss();
                             }
                         }, list);
 //                        finish();
