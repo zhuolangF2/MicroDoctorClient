@@ -10,9 +10,9 @@ public class Appointment {
     private int id;
     private int patientId;//病人ID
     private int doctorId;//医师ID
-    private Date seeTime;//预约了去就诊日期时间
+    private String seeTime;//预约了去就诊日期时间
     private String disease;//病症
-    private Date dateTime;//预约时间、
+    private String dateTime;//预约时间、
     private String diagnose;//医生诊断
     private double dstar;//评论（星号）
     private int dNumber;
@@ -41,11 +41,11 @@ public class Appointment {
         this.doctorId = doctorId;
     }
 
-    public Date getSeeTime() {
+    public String getSeeTime() {
         return seeTime;
     }
 
-    public void setSeeTime(Date seeTime) {
+    public void setSeeTime(String seeTime) {
         this.seeTime = seeTime;
     }
 
@@ -57,11 +57,11 @@ public class Appointment {
         this.disease = disease;
     }
 
-    public Date getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 

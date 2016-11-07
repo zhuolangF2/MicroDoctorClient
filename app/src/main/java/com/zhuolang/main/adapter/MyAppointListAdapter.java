@@ -1,6 +1,7 @@
 package com.zhuolang.main.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.model.Appointment;
 import com.zhuolang.main.utils.TimeUtil;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -80,9 +82,16 @@ public class MyAppointListAdapter extends BaseAdapter {
         }else {
             holder = (ViewHolder)convertView.getTag();
         }
-        holder.doctor_name.setText(list.get(position).getDoctorId());
+        holder.doctor_name.setText("" + list.get(position).getDoctorId());
         holder.disease.setText(list.get(position).getDisease());
-        holder.time.setText(TimeUtil.dateToString(list.get(position).getSeeTime()));
+//        holder.time.setText(TimeUtil.dateToString(list.get(position).getSeeTime()));
+        Log.d("testRun", "MyAppointListAdapter seettime==========" + list.get(position).getSeeTime()+"string==");
+        Log.d("testRun", "MyAppointListAdapter getDateTime==========" + list.get(position).getDateTime()+"string==");
+        Date date=TimeUtil.stringToDate(list.get(position).getSeeTime());
+        Date date1=TimeUtil.stringToDate(list.get(position).getDateTime());
+        Log.d("testRun", "MyAppointListAdapter date==========" + date+"SeeTime==");
+        Log.d("testRun", "MyAppointListAdapter date==========" + date1+"SeeTime==");
+        holder.time.setText(TimeUtil.dateToStrNoTime(date));
         return convertView;
     }
 

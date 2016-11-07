@@ -18,6 +18,7 @@ import com.zhuolang.main.model.Appointment;
 import com.zhuolang.main.model.User;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.*;
 
@@ -36,8 +37,9 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
         @Override
         public void handleMessage(Message msg) {
 //            super.handleMessage(msg);
-            String result = (String) msg.obj;
+            String result = msg.obj.toString();
             Log.d("testRun","result======"+result);
+            CustomWaitDialog.miss();
             Gson gson = new Gson();
             appointments = gson.fromJson(result, new TypeToken<List<Appointment>>() {}.getType());
             adapter = new MyAppointListAdapter(MyAppointListActivity.this,appointments);
@@ -80,6 +82,7 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
         User user = gson.fromJson(userData, User.class);
         OkHttpUtils.Param typeParam = new OkHttpUtils.Param("patientId", user.getId()+"");//接口要求传类型，类型一为医师
         list.add(typeParam);
+        CustomWaitDialog.show(MyAppointListActivity.this,"连接服务中...");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -91,16 +94,16 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
                         message.what = 0;
                         message.obj = response;
                         if (handler.sendMessage(message)) {
-                            Toast.makeText(MyAppointListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MyAppointListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                         }else {
-                            Toast.makeText(MyAppointListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MyAppointListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Exception e) {
                         Toast.makeText(MyAppointListActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
-
+                        CustomWaitDialog.miss();
                     }
                 }, list);
             }
@@ -114,6 +117,7 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
         Appointment appointment = appointments.get(position);
         Gson gson = new Gson();
         String doctorDtoStr = gson.toJson(appointment);
+        Log.d("testRun", "doctorDtoStr==========" + doctorDtoStr);
         intent.putExtra("doctorDtoStr", doctorDtoStr);
         startActivity(intent);
     }
