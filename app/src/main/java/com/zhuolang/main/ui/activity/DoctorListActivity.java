@@ -38,11 +38,11 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
             dataList = new ArrayList<Map<String, Object>>();
             for (DoctorDto d : doctorDtos) {
                 Map<String, Object> map = new HashMap<String, Object>();
-                map.put("imageView", R.drawable.myicon);
+                map.put("imageView", R.drawable.doctor_128);
                 map.put("name", d.getName());
-                map.put("amount", d.getAmount());
-                map.put("introduction", d.getIntroduction());
-                map.put("office", d.getOffice());
+                map.put("amount", "接诊量："+d.getAmount());
+                map.put("introduction", "简介："+d.getIntroduction());
+                map.put("office", "科室："+d.getOffice());
                 map.put("doctorId", d.getId());
                 dataList.add(map);
             }

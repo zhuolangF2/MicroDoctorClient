@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.google.gson.Gson;
@@ -36,6 +37,7 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
         public void handleMessage(Message msg) {
 //            super.handleMessage(msg);
             String result = (String) msg.obj;
+            Log.d("testRun","result======"+result);
             Gson gson = new Gson();
             appointments = gson.fromJson(result, new TypeToken<List<Appointment>>() {}.getType());
             adapter = new MyAppointListAdapter(MyAppointListActivity.this,appointments);
@@ -88,9 +90,9 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
                         Message message = new Message();
                         message.what = 0;
                         message.obj = response;
-                        if (handler.sendMessage(message))
+                        if (handler.sendMessage(message)) {
                             Toast.makeText(MyAppointListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
-                        else {
+                        }else {
                             Toast.makeText(MyAppointListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                         }
                     }

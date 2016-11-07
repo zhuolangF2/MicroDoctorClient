@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#e6eaef"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-            android:orientation="vertical"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <LinearLayout
+            android:id="@+id/ll_doctor_list_top"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <LinearLayout
-                android:id="@+id/ll_doctor_list_top"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:background="@color/steelblue"
-                android:layout_height="40dp">
+            android:orientation="horizontal"
+            android:background="@color/steelblue"
+            android:layout_height="40dp">
             <ImageView
-                    android:id="@+id/img_doctorList_back"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="2dp"
-                    android:layout_width="60dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/back01"/>
+                android:id="@+id/img_doctorList_back"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_width="60dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back01"/>
             <TextView
                     android:text="医师详细信息"
-                    android:textSize="42px"
+                    android:textSize="20dp"
                     android:id="@+id/textView"
                     android:textColor="#ffffff"
                     android:layout_gravity="center_vertical"
@@ -35,88 +37,325 @@
                     android:layout_width="60dp"
                     android:layout_height="match_parent" />
         </LinearLayout>
-
-        <LinearLayout
-                android:orientation="vertical"
+            <LinearLayout
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dnickname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dgender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dphone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Daddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dsignature"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dintroduction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Dhospital"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Doffice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
-            <TextView
-                    android:text="@string/app_name"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_Damount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"/>
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  姓名 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dname"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  昵称 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dnickname"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  性别 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dgender"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  年龄 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dage"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  手机 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dphone"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:minHeight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  地址 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Daddress"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:maxLength="27"
+                        android:singleLine="false"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:minHeight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  个性签名 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dsignature"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:maxLength="45"
+                        android:singleLine="false"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:minHeight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  个人简介 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dintroduction"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:maxLength="45"
+                        android:singleLine="false"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:minHeight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  所属医院 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Dhospital"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:maxLength="27"
+                        android:singleLine="false"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:minHeight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  所属科室 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Doffice"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:maxLength="18"
+                        android:singleLine="false"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:background="#fcfbfb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="  接诊量 "
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_Damount"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:layout_marginRight="13dp"
+                        android:text="昵称"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
             <Button
                     android:id="@+id/bt_doctor_back"
                     android:layout_width="match_parent"
@@ -128,6 +367,6 @@
                     android:textColor="#ffffff"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="30dp"/>
-        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

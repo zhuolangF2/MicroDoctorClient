@@ -55,7 +55,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -106,7 +106,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -133,7 +133,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -160,7 +160,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -188,7 +188,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -216,7 +216,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -245,7 +245,7 @@
 
         <LinearLayout
             android:id="@+id/ll_updatedotinfo_hospt"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
@@ -274,7 +274,7 @@
 
         <LinearLayout
             android:id="@+id/ll_updatedotinfo_office"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:background="#fcfbfb"
             android:layout_width="match_parent"
