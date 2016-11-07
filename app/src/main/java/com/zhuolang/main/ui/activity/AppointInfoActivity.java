@@ -51,6 +51,9 @@ public class AppointInfoActivity extends Activity {
                     if (result.equals("addAppointment_success")) {
                         Intent intent = new Intent();
                         intent.setClass(AppointInfoActivity.this, AppointSuccessActivity.class);
+                        intent.putExtra("disease", disease);
+                        intent.putExtra("seeTime",seeTime);
+                        intent.putExtra("doctorName",user.getName());
                         startActivity(intent);
                         finish();
                     } else {

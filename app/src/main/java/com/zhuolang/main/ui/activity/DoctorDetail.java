@@ -55,18 +55,13 @@ public class DoctorDetail extends Activity {
         tv_DoctorOffice = (TextView) findViewById(R.id.tv_Doffice);
         tv_DoctorAmount = (TextView) findViewById(R.id.tv_Damount);
 
-        bt_doctor_back = (Button) findViewById(R.id.bt_doctor_back);
+
         img_doctorList_back = (ImageView) findViewById(R.id.img_doctorList_back);
     }
 
     //监听
     private void initMotion() {
-        bt_doctor_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
         img_doctorList_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
