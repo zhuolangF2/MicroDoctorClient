@@ -49,7 +49,7 @@ public class MyAppointDetailActivity extends Activity {
         appointmentDto = gson.fromJson(doctorDtoStr, AppointmentDto.class);
 
         tv_appoint_doctorName.setText("" + appointmentDto.getDoctor_name());
-        Date date = TimeUtil.stringToDate(appointmentDto.getSeeTime());
+        Date date = TimeUtil.longToDateNoTime(appointmentDto.getSeeTime());
         tv_appoint_seeTime.setText(TimeUtil.dateToStrNoTime(date));
         tv_appoint_disease.setText(appointmentDto.getDisease());
         tv_appoint_dNumber.setText("" + appointmentDto.getdNumber());

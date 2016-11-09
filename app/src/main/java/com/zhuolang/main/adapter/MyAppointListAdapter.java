@@ -87,12 +87,10 @@ public class MyAppointListAdapter extends BaseAdapter {
         holder.doctor_name.setText("" + list.get(position).getDoctor_name());
         holder.disease.setText(list.get(position).getDisease());
 //        holder.time.setText(TimeUtil.dateToString(list.get(position).getSeeTime()));
-        Log.d("testRun", "MyAppointListAdapter seettime==========" + list.get(position).getSeeTime() + "string==");
-        Log.d("testRun", "MyAppointListAdapter getDateTime==========" + list.get(position).getDateTime() + "string==");
-        Date date = TimeUtil.stringToDate(list.get(position).getSeeTime());
-        Date date1 = TimeUtil.stringToDate(list.get(position).getDateTime());
+        Date date = TimeUtil.longToDateNoTime(list.get(position).getSeeTime());
+//        Date date1 = TimeUtil.stringToDate(list.get(position).getDateTime());
         Log.d("testRun", "MyAppointListAdapter date==========" + date + "SeeTime==");
-        Log.d("testRun", "MyAppointListAdapter date==========" + date1 + "SeeTime==");
+//        Log.d("testRun", "MyAppointListAdapter date==========" + date1 + "SeeTime==");
         holder.time.setText(TimeUtil.dateToStrNoTime(date));
         return convertView;
     }

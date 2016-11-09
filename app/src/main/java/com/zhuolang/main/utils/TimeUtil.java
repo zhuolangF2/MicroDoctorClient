@@ -95,4 +95,17 @@ public class TimeUtil {
         }
         return ts;
 	}
+
+    public static Date longToDateNoTime(String dateStr){
+        Date date = new Date(Long.parseLong(dateStr));
+        //注意format的格式要与日期String的格式相匹配
+        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            date = sdf.parse(dateStr);
+            System.out.println(date.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
 }
