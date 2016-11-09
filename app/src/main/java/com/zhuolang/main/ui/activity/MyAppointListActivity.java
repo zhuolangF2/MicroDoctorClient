@@ -15,6 +15,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.adapter.MyAppointListAdapter;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.Appointment;
+import com.zhuolang.main.model.AppointmentDto;
 import com.zhuolang.main.model.User;
 import com.zhuolang.main.utils.OkHttpUtils;
 import com.zhuolang.main.utils.SharedPrefsUtil;
@@ -29,7 +30,8 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
     private ListView listView;
     private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> dataList;
-    private List<Appointment> appointments = new ArrayList<>();
+//    private List<Appointment> appointments = new ArrayList<>();
+    private List<AppointmentDto> appointmentDtos = new ArrayList<>();
     private ImageView img_back;
     private MyAppointListAdapter adapter;
 
@@ -41,8 +43,8 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
             Log.d("testRun","result======"+result);
             CustomWaitDialog.miss();
             Gson gson = new Gson();
-            appointments = gson.fromJson(result, new TypeToken<List<Appointment>>() {}.getType());
-            adapter = new MyAppointListAdapter(MyAppointListActivity.this,appointments);
+            appointmentDtos = gson.fromJson(result, new TypeToken<List<AppointmentDto>>() {}.getType());
+            adapter = new MyAppointListAdapter(MyAppointListActivity.this,appointmentDtos);
             listView.setAdapter(adapter);
 //            dataList = new ArrayList<Map<String, Object>>();
 //            for (Appointment a : appointments) {
@@ -116,9 +118,9 @@ public class MyAppointListActivity extends Activity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
         intent.setClass(MyAppointListActivity.this, MyAppointDetailActivity.class);
-        Appointment appointment = appointments.get(position);
+        AppointmentDto appointmentDto = appointmentDtos.get(position);
         Gson gson = new Gson();
-        String doctorDtoStr = gson.toJson(appointment);
+        String doctorDtoStr = gson.toJson(appointmentDto);
         Log.d("testRun", "doctorDtoStr==========" + doctorDtoStr);
         intent.putExtra("doctorDtoStr", doctorDtoStr);
         startActivity(intent);
