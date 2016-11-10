@@ -80,7 +80,7 @@ public class HomepageTabFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.image_item_consult:
                 Intent intent4 = new Intent();
-                intent4.setClass(getActivity(), MyConsultActivity.class);
+                intent4.setClass(getActivity(), HistoryActivity.class);
                 startActivity(intent4);
                 break;
         }

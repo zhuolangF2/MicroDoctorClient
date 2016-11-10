@@ -116,7 +116,7 @@
                     android:layout_width="78dp"
                     android:layout_height="78dp" />
                 <TextView
-                    android:text="我的咨询"
+                    android:text="历史记录"
                     android:textSize="11dp"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"

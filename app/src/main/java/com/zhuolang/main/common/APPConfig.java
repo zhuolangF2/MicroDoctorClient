@@ -7,8 +7,9 @@ package com.zhuolang.main.common;
 public class APPConfig {
 //    private static String base_url="http://192.168.23.1:8080/MicroDoctorServer/";
 //    private static String base_url="http://192.168.43.123:8080/MicroDoctorServer/";
-    private static String base_url="http://192.168.168.100:8080/MicroDoctorServer/";
-//    private static String base_url = "http:// 27.45.9.166:80/MicroDoctorServer/";
+//    private static String base_url="http://10.11.37.107:8080/MicroDoctorServer/";
+//    private static String base_url="http://192.168.168.100:8080/MicroDoctorServer/";
+    private static String base_url = "http://27.45.36.67:80/MicroDoctorServer/";
     public static String addAppointment = base_url + "add_appointment";
     public static String login = base_url + "login_user";
     public static String showDoctor = base_url + "findByType_user";
