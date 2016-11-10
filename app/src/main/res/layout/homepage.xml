@@ -97,6 +97,7 @@
                     android:layout_width="78dp"
                     android:layout_height="78dp" />
                 <TextView
+                    android:id="@+id/tv_homep_appointmine"
                     android:text="我的预约"
                     android:textSize="11dp"
                     android:layout_gravity="center"
@@ -116,6 +117,7 @@
                     android:layout_width="78dp"
                     android:layout_height="78dp" />
                 <TextView
+                    android:id="@+id/tv_homep_history"
                     android:text="我的咨询"
                     android:textSize="11dp"
                     android:layout_gravity="center"

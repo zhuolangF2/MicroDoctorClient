@@ -209,6 +209,7 @@ public class RegisterActivity extends Activity {
                         RegisterActivity.this.startService(intentService);
                         //保存登录状态
                         SharedPrefsUtil.putValue(RegisterActivity.this, APPConfig.IS_LOGIN, true);
+                        SharedPrefsUtil.putValue(RegisterActivity.this,APPConfig.TYPE,type.toString());
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this, MainActivity.class);
 //                        Toast.makeText(RegisterActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();

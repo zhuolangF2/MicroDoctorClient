@@ -14,6 +14,7 @@ import com.zhuolang.main.R;
 import com.zhuolang.main.common.APPConfig;
 import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.utils.OkHttpUtils;
+import com.zhuolang.main.view.CustomWaitDialog;
 
 import java.util.*;
 
@@ -73,6 +74,7 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
         final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
         OkHttpUtils.Param typeParam = new OkHttpUtils.Param("type", "1");//接口要求传类型，类型一为医师
         list.add(typeParam);
+        CustomWaitDialog.show(DoctorListActivity.this, "连接服务中...");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -84,6 +86,7 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
                         message.what = 0;
                         message.obj = response;
                         if (handler.sendMessage(message)) {
+                            CustomWaitDialog.miss();
 //                            Toast.makeText(DoctorListActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                         }else {
 //                            Toast.makeText(DoctorListActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
@@ -98,7 +101,7 @@ public class DoctorListActivity extends Activity implements AdapterView.OnItemCl
 //                        startActivity(intent);
 //                        finish();
                         Toast.makeText(DoctorListActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
-
+                        CustomWaitDialog.miss();
                     }
                 }, list);
             }
