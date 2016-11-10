@@ -38,6 +38,7 @@ public class LoginActivity extends Activity {
 
     private String account;
     private String psd;
+    private int type;
 
     private Handler handler = new Handler(){
         @Override
@@ -47,7 +48,7 @@ public class LoginActivity extends Activity {
                 case 0:
                     CustomWaitDialog.miss();
                     String result = (String)msg.obj;
-                    if (result.equals("login_success")){
+                    if (result.equals("login_success0")||result.equals("login_success1")){
                         //保存登录状态
                         SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.IS_LOGIN,true);
                         Intent intentService = new Intent();
@@ -58,6 +59,7 @@ public class LoginActivity extends Activity {
                         Toast.makeText(LoginActivity.this,"登陆成功！",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent();
                         intent.setClass(LoginActivity.this, MainActivity.class);
+//                        intent.putExtra("type", type + "");
                         startActivity(intent);
                         finish();
                     }
@@ -128,12 +130,16 @@ public class LoginActivity extends Activity {
                                 Message message = new Message();
                                 message.what = 0;
                                 message.obj = response;
-                                if (handler.sendMessage(message)) {
-//                                    Toast.makeText(LoginActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                if (response.toString().equals("login_success0")) {
+                                    type = 0 ;
+                                    SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.TYPE,"0");
+//                            Toast.makeText(AppointActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    type = 1 ;
+                                    SharedPrefsUtil.putValue(LoginActivity.this,APPConfig.TYPE,"1");
+//                            Toast.makeText(AppointActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
                                 }
-                                else {
-//                                    Toast.makeText(LoginActivity.this, "发送数据失败，请重试！", Toast.LENGTH_SHORT).show();
-                                }
+                                handler.sendMessage(message);
                             }
 
                             @Override

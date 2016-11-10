@@ -8,9 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.zhuolang.main.R;
+import com.zhuolang.main.common.APPConfig;
+import com.zhuolang.main.model.DoctorDto;
 import com.zhuolang.main.ui.activity.*;
+import com.zhuolang.main.utils.SharedPrefsUtil;
 
 /**
  * Created by wnf on 2016/10/29.
@@ -26,6 +32,10 @@ public class HomepageTabFragment extends Fragment implements View.OnClickListene
     private ImageView imageAppoint = null;//预约挂号
     private ImageView imageMyAppoint = null;//我的预约
     private ImageView imageConsult = null;//我的咨询
+    private TextView tv_appointMine;
+    private TextView tv_history;
+
+    private String type;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -41,14 +51,24 @@ public class HomepageTabFragment extends Fragment implements View.OnClickListene
      *初始化数据
      */
     private void initView(View view) {
+        type = SharedPrefsUtil.getValue(getContext(), APPConfig.TYPE, "");
+        tv_appointMine= (TextView) view.findViewById(R.id.tv_homep_appointmine);
+        tv_history= (TextView) view.findViewById(R.id.tv_homep_history);
         imageConsult = (ImageView) view.findViewById(R.id.image_item_consult);
-        imageConsult.setOnClickListener(this);
         imageDoctor = (ImageView) view.findViewById(R.id.image_item_doctor);
-        imageDoctor.setOnClickListener(this);
         imageAppoint = (ImageView) view.findViewById(R.id.image_item_appointment);
-        imageAppoint.setOnClickListener(this);
         imageMyAppoint = (ImageView) view.findViewById(R.id.image_item_myappointment);
+        if (type.equals("1")){
+            tv_appointMine.setText("预约我的");
+            tv_history.setText("历史记录");
+        }else {
+            tv_appointMine.setText("我的预约");
+            tv_history.setText("我的咨询");
+        }
+        imageAppoint.setOnClickListener(this);
         imageMyAppoint.setOnClickListener(this);
+        imageDoctor.setOnClickListener(this);
+        imageConsult.setOnClickListener(this);
     }
 
     @Override

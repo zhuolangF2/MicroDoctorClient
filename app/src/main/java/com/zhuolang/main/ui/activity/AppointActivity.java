@@ -71,7 +71,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
         final List<OkHttpUtils.Param> list = new ArrayList<OkHttpUtils.Param>();
         OkHttpUtils.Param typeParam = new OkHttpUtils.Param("type", "1");
         list.add(typeParam);
-
+        CustomWaitDialog.show(AppointActivity.this, "连接服务中...");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -81,6 +81,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
                         Message message = new Message();
                         message.what = 0;
                         message.obj = response;
+                        CustomWaitDialog.miss();
                         if (handler.sendMessage(message)) {
 //                            Toast.makeText(AppointActivity.this, "发送数据成功！", Toast.LENGTH_SHORT).show();
                         } else {
@@ -90,7 +91,7 @@ public class AppointActivity extends Activity implements AdapterView.OnItemClick
                     @Override
                     public void onFailure(Exception e) {
                         Toast.makeText(AppointActivity.this, "网络连接失败，请重试！", Toast.LENGTH_SHORT).show();
-//                        CustomWaitDialog.miss();
+                        CustomWaitDialog.miss();
                     }
                 }, list);
             }
